@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | XZZY233 BLOG</title>
+  <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1.TCP/IP协议分层模型 1.1 TCP与IP模型 ———————————— |   应用层   |     包含所有的高层协议，比如：虚拟终端协议（TELNET）、文件传输协议（FTP）、电子邮件传输协议（SMTP）、域名服务（DNS）、超文本传送协议（HTTP）等。TELNET允许一台机器上的用户登录到远程机器上，并进行工作；FTP提供有效地将文件从一台机器上移到另一台机器上的方法；SMT">
+<meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/04/06/TCP和IP协议分层模型/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
+<meta property="og:description" content="1.TCP/IP协议分层模型 1.1 TCP与IP模型 ———————————— |   应用层   |     包含所有的高层协议，比如：虚拟终端协议（TELNET）、文件传输协议（FTP）、电子邮件传输协议（SMTP）、域名服务（DNS）、超文本传送协议（HTTP）等。TELNET允许一台机器上的用户登录到远程机器上，并进行工作；FTP提供有效地将文件从一台机器上移到另一台机器上的方法；SMT">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-06T10:22:53.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
+<meta name="twitter:description" content="1.TCP/IP协议分层模型 1.1 TCP与IP模型 ———————————— |   应用层   |     包含所有的高层协议，比如：虚拟终端协议（TELNET）、文件传输协议（FTP）、电子邮件传输协议（SMTP）、域名服务（DNS）、超文本传送协议（HTTP）等。TELNET允许一台机器上的用户登录到远程机器上，并进行工作；FTP提供有效地将文件从一台机器上移到另一台机器上的方法；SMT">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -150,106 +154,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-TCP和IP协议分层模型" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-TCP-IP协议分层模型"><a href="#1-TCP-IP协议分层模型" class="headerlink" title="1.TCP/IP协议分层模型"></a>1.TCP/IP协议分层模型</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><h1 id="1-1-TCP与IP模型"><a href="#1-1-TCP与IP模型" class="headerlink" title="1.1 TCP与IP模型"></a>1.1 TCP与IP模型</h1><pre><code> ————————————
+|   应用层   |    
+包含所有的高层协议，比如：虚拟终端协议（TELNET）、文件传输协议（FTP）、电子邮件传输协议（SMTP）、域名服务（DNS）、超文本传送协议（HTTP）等。TELNET允许一台机器上的用户登录到远程机器上，并进行工作；FTP提供有效地将文件从一台机器上移到另一台机器上的方法；SMTP用于电子邮件的收发；DNS用于把主机名映射到网络地址；HTTP用于在WWW上获取主页。
+ ————————————    
+|   传输层   |  
+使源端和目的端机器上的对等实体可以进行会话。在这一层定义了两个端到端的协议：传输控制协议（TCP，Transmission Control Protocol）和用户数据报协议（UDP，User Datagram Protocol）。TCP使面向连接的协议，它提供的使可靠的报文传输和对上层应用的连接服务。所以，除了基本的数据传输外，它还有可靠性保证、流量控制、多路复用、优先权和安全性控制等功能。UDP使面向无连接的不可靠传输的协议，只要是用于不需要TCP的排序和流量控制等功能的应用程序。
+ ————————————    
+|   互联网层 |  
+是整个体系结构的关键组成部分，功能是使主机可以把分组发往任何网络，并使分组独立地传向目标。这些分组可能经由不同的网络，到达的顺序和发送的顺序也可能不同。高层如果需要顺序收发，那么就必须自行处理对分组的排序。互联网层使用因特网协议（IP，Internet Protocol）。与OSI模型中的网络层在功能上非常相似。
+ ————————————
+|    网络访问层 |  
+模型中没有详细描述，只是指出主机必须使用某种协议与网络连接。
+ ————————————  
+</code></pre><h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><h1 id="1-2-OSI模型"><a href="#1-2-OSI模型" class="headerlink" title="1.2 OSI模型"></a>1.2 OSI模型</h1><pre><code> ————————————
+|   应用层   |  
+中包含了大量人们普遍需要的协议。不同的文件系统有不同的文件命名原则和不同的文本行表示方法等，不同的系统之间传输文件还有各种不兼容问题，这些都将由应用层来处理。还有虚拟终端、电子邮件和新闻组等各种通用和专用的功能。
+ ————————————
+|   表示层   |  
+用于完成一些特定的功能，这些功能由于经常被请求，因此人们希望有通用的解决办法，而不是由每个用户各自实现。  
+ ————————————
+|   会话层   |  
+允许不同机器上的用户之间建立会话关系，既可以进行类似传输层的普通数据传输，也可以被用于远程登录到分时系统或在两台机器间传递文件。
+ ————————————
+|   传输层   |  
+从会话层接受数据，并传输给网络层，同时确保到达目的端的各段信息正确无误，而且使会话层不受硬件变化的影响。通常，会话层每请求建立一个传输连接，传输层就会为其创建一个独立的网络连接。如果需要吞吐量较高，则会建立多个网络连接，分流。
+ ————————————
+|   网络层   |  
+确定分组和从源端到目的端的路由选择。路由可以选用网络中固定的静态路由表，也可以在每一次会话时决定，还可以根据当前的网络负载情况，灵活地为每一个分组分别决定。  
+ ————————————
+|  数据链路层 |  
+任务是加强物理层的功能，使其对网络层显示为一条无错的线路。
+ ————————————
+|   物理层   |  
+主要是处理机械的、电气的和过程的接口，以及物理层下的物理传输介质等。
+ ————————————  
+</code></pre><h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h1 id="1-3-TCP-IP结构对应OSI"><a href="#1-3-TCP-IP结构对应OSI" class="headerlink" title="1.3 TCP/IP结构对应OSI"></a>1.3 TCP/IP结构对应OSI</h1><pre><code>         TCP/IP                          OSI  
+ —————————————————————            ————————————
+|                    |            |   应用层   |  
+|                    |            ———————————
+|        应用层       |            |   表示层   |  
+|                    |            ———————————
+|                    |            |   会话层   |  
+ —————————————————————            ————————————
+|        传输层       |            |   传输层   |  
+ —————————————————————            ————————————
+|        网络层       |            |   网络层   |  
+ —————————————————————            ————————————
+|                    |            |  数据链路层 |  
+|  网络接口层(链路层)  |            ———————————
+|                    |            |   物理层   |  
+ —————————————————————            ————————————  
+</code></pre><h2 id="-3"><a href="#-3" class="headerlink" title=" "></a> </h2><h1 id="1-4-补充"><a href="#1-4-补充" class="headerlink" title="1.4 补充"></a>1.4 补充</h1><p>会话控制（session）——Session对象存储特定用户会话所需的属性及配置信息<br>调制解调（俗称猫）——处理信号的<br>中继器——放大信号<br>WIFI路由器——创建本地网络，给每一台设备分配一个IP地址<br>路由器——把不同的网络连通，其中有路由表，避免网络阻塞<br>交换机——可以把接入的设备组成一个小型局域网，性能比网桥强<br>集线器——多端口的中继器<br>网桥（局域网间访问）——用来连接2个局域网<br>网关——门<br>时间2019/4/6</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/JDBC/" class="archive-article-date">
-  	<time datetime="2019-03-27T01:34:34.659Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/06/TCP和IP协议分层模型/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/23/JSP九大内置对象/" class="archive-article-date">
-  	<time datetime="2019-03-23T07:59:35.111Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/16/kali不能安装软件解决方法/" class="archive-article-date">
-  	<time datetime="2019-03-16T14:31:15.562Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/04/06/Hexo命令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/27/JDBC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/10/markdown语法/" class="archive-article-date">
-  	<time datetime="2019-03-10T07:56:47.721Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -272,8 +371,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
