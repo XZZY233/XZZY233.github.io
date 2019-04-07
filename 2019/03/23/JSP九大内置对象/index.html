@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#JSP九大内置对象1.out输出对象，向客户端输出内容2.pageContext   3.request请求对象，存储客户端向服务端发送的请求信息request的常见方法String getParameter(String name); 根据请求的字段名key，返回字段值valueString[] getParameterValues(String name); 根据请求的字段名key，返回多个">
+  <meta name="description" content="JSP九大内置对象 1.out输出对象，向客户端输出内容 2.pageContextJSP页面容器 3.request请求对象，存储客户端向服务端发送的请求信息request的常见方法：String getParameter(String name); 根据请求的字段名key，返回字段值valueString[] getParameterValues(String name); 根据请求的字段名k">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
 <meta property="og:url" content="http://yoursite.com/2019/03/23/JSP九大内置对象/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
-<meta property="og:description" content="#JSP九大内置对象1.out输出对象，向客户端输出内容2.pageContext   3.request请求对象，存储客户端向服务端发送的请求信息request的常见方法String getParameter(String name); 根据请求的字段名key，返回字段值valueString[] getParameterValues(String name); 根据请求的字段名key，返回多个">
+<meta property="og:description" content="JSP九大内置对象 1.out输出对象，向客户端输出内容 2.pageContextJSP页面容器 3.request请求对象，存储客户端向服务端发送的请求信息request的常见方法：String getParameter(String name); 根据请求的字段名key，返回字段值valueString[] getParameterValues(String name); 根据请求的字段名k">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-03T13:52:36.803Z">
+<meta property="og:updated_time" content="2019-04-07T05:58:58.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
-<meta name="twitter:description" content="#JSP九大内置对象1.out输出对象，向客户端输出内容2.pageContext   3.request请求对象，存储客户端向服务端发送的请求信息request的常见方法String getParameter(String name); 根据请求的字段名key，返回字段值valueString[] getParameterValues(String name); 根据请求的字段名key，返回多个">
+<meta name="twitter:description" content="JSP九大内置对象 1.out输出对象，向客户端输出内容 2.pageContextJSP页面容器 3.request请求对象，存储客户端向服务端发送的请求信息request的常见方法：String getParameter(String name); 根据请求的字段名key，返回字段值valueString[] getParameterValues(String name); 根据请求的字段名k">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -159,14 +159,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#JSP九大内置对象<br>1.out<br>输出对象，向客户端输出内容<br>2.pageContext  </p>
-<p>3.request<br>请求对象，存储客户端向服务端发送的请求信息<br>request的常见方法<br>String getParameter(String name); 根据请求的字段名key，返回字段值value<br>String[] getParameterValues(String name); 根据请求的字段名key，返回多个字段值value （checkbox）<br>void setCharacterEncoding(“编码格式UTF-8”) ; 设置请求编码<br>getRequsetDispatcher(“B.jsp”).forward(requset,response); 请求转发 A -&gt; B 可以获取到数据，并且地址栏没有改变（仍然在转发前地址）  响应一次  服务端内部跳转<br>ServerContext getServerContext(); 获取项目的ServerContext<br>4.reponse<br>响应对象<br>reponse常见方法<br>void addCookie(Cookie cookie); 服务端向客户端增加一个cookie对象<br>void sendRedirect(String location) throws IOException; 页面跳转的一种方式，重定向   但是数据会丢失，地址栏会改变  响应两次<br>void setContentType(String type); 设置服务端响应编码<br>5.session(服务端)<br>Cookie（客户端，不是内部对象） 需要new  ：服务端产生，再发送给客户端保存。相当于本地缓存 作用：提高访问服务器的效率，但是安全性较差。<br>Cookie:key=value<br>javax.servlet.http.Cookie类<br>方法：public Cookie(String key,String value)<br>String getName()<br>String getValue()<br>void setMaxAge(int expiry); 设置最大有效期，单位秒<br>服务端发送Cookie的过程：<br>response.addCookie(Cookie cookie);<br>页面跳转（转发、重定向）<br>客户端获取Cookie：<br>request.getCookie();//注意一次要全部都拿到，之后再遍历取其中需要的Cookie<br>一般Cookie只保存英文和数字，不使用中文<br>session：一次会话  浏览器的开始到关闭；购物从开始浏览、付款、结束。 开始——结束<br>session机制：客户端第一次请求服务端时，服务端会产生一个session对象（用于保存该客户的信息）；<br>并且每一个session都会有一个唯一的sessionID（用于区别其他session）；<br>服务端又会产生一个cookie，并且该cookie的name=JSESSIONID，value=服务端sessionID的值；<br>然后服务端会在响应客户端的同时将该cookie发送给客户端，至此客户端就有了一个cookie（JSESSIONID）；<br>因此，客户端的cookie就可以和服务端的session一一对应（JSESSIONID-session）<br>客户端第二/n次请求服务端时：服务端会先用客户端cookie中的JSESSIONID 去服务端的session中匹配sessionid；<br>session的机制：session存储在服务端；session是在同一个用户（客户）请求时共享；<br>session的使用（属性和方法）：<br>session方法：<br>String getId();获取sessionId<br>boolean isNew();判断是不是第一次访问<br>void invalidate();使session失效（退出、注销）  </p>
-<p>void setAttribute();<br>Object getAttribute();    </p>
-<p>void setMaxInactiveInterval(秒);设置最大有效非活动时间<br>int getMaxInactiveInterval(秒);查看当前最大有效非活动时间</p>
-<p>6.application  </p>
-<p>7.config  </p>
-<p>8.page  </p>
-<p>9.exception  </p>
+        <h1 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><h1 id="1-out"><a href="#1-out" class="headerlink" title="1.out"></a>1.out</h1><p>输出对象，向客户端输出内容</p>
+<h1 id="2-pageContext"><a href="#2-pageContext" class="headerlink" title="2.pageContext"></a>2.pageContext</h1><p>JSP页面容器</p>
+<h1 id="3-request"><a href="#3-request" class="headerlink" title="3.request"></a>3.request</h1><p>请求对象，存储客户端向服务端发送的请求信息<br>request的常见方法：<br>String getParameter(String name); 根据请求的字段名key，返回字段值value<br>String[] getParameterValues(String name); 根据请求的字段名key，返回多个字段值value （checkbox）<br>void setCharacterEncoding(“编码格式UTF-8”) ; 设置请求编码<br>getRequsetDispatcher(“B.jsp”).forward(requset,response); 请求转发 A -&gt; B 可以获取到数据，并且地址栏没有改变（仍然在转发前地址）响应一次  服务端内部跳转<br>ServerContext getServerContext(); 获取项目的ServerContext<br>request只有在同一次请求中才有效     </p>
+<h1 id="4-reponse"><a href="#4-reponse" class="headerlink" title="4.reponse"></a>4.reponse</h1><p>响应对象<br>reponse常见方法：<br>void addCookie(Cookie cookie); 服务端向客户端增加一个cookie对象<br>void sendRedirect(String location) throws IOException; 页面跳转的一种方式，重定向   但是数据会丢失，地址栏会改变  响应两次<br>void setContentType(String type); 设置服务端响应编码       </p>
+<h1 id="5-session-服务端"><a href="#5-session-服务端" class="headerlink" title="5.session(服务端)"></a>5.session(服务端)</h1><p>Cookie（客户端，不是内部对象） 需要new  ：服务端产生，再发送给客户端保存。相当于本地缓存 作用：提高访问服务器的效率，但是安全性较差。<br>但是，服务端会自动生产一个name=JSESSIONID（服务端自动new一个）的cookie并返回给客户端<br>Cookie:key=value<br>javax.servlet.http.Cookie类<br>方法：<br>public Cookie(String key,String value)<br>String getName()<br>String getValue()<br>void setMaxAge(int expiry); 设置最大有效期，单位秒<br>服务端发送Cookie的过程：<br>response.addCookie(Cookie cookie);<br>页面跳转（转发、重定向）<br>客户端获取Cookie：<br>request.getCookie();//注意一次要全部都拿到，之后再遍历取其中需要的Cookie<br>一般Cookie只保存英文和数字，不使用中文  </p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><p>session：一次会话  浏览器的开始到关闭；购物从开始浏览、付款、结束。 开始——结束<br>session机制：客户端第一次请求服务端时，服务端会产生一个session对象（用于保存该客户的信息）；<br>并且每一个session都会有一个唯一的sessionID（用于区别其他session）；<br>服务端又会产生一个cookie，并且该cookie的name=JSESSIONID，value=服务端sessionID的值；<br>然后服务端会在响应客户端的同时将该cookie发送给客户端，至此客户端就有了一个cookie（JSESSIONID）；<br>因此，客户端的cookie就可以和服务端的session一一对应（JSESSIONID-session）<br>客户端第二/n次请求服务端时：服务端会先用客户端cookie中的JSESSIONID 去服务端的session中匹配sessionid；<br>session的机制：session存储在服务端；session是在同一个用户（客户）请求时共享；<br>session的使用（属性和方法）：<br>session方法：<br>String getId();获取sessionId<br>boolean isNew();判断是不是第一次访问<br>void invalidate();使session失效（退出、注销）<br>void setAttribute();<br>Object getAttribute();<br>void setMaxInactiveInterval(秒);设置最大有效非活动时间<br>int getMaxInactiveInterval(秒);查看当前最大有效非活动时间<br>cookie和session的区别：<br>保存的位置：session(服务端) cookie(客户端)<br>安全性：session(较安全) cookie(较不安全)<br>保存的内容：session(Object) cookie(String)<br>客户端在第一次请求服务端时，如果服务端发现此请求没有JSESSIONID，则会创建一个拥有name=JSESSIONID的cookie并返回给客户端 </p>
+<h1 id="6-application"><a href="#6-application" class="headerlink" title="6.application"></a>6.application</h1><p>全局变量<br>String getContextPath() 获取虚拟路径<br>String getRealPath(String name) 绝对路径（虚拟路径相对的绝对路径）  </p>
+<h1 id="7-config"><a href="#7-config" class="headerlink" title="7.config"></a>7.config</h1><p>配置对象（服务器配置信息）</p>
+<h1 id="8-page"><a href="#8-page" class="headerlink" title="8.page"></a>8.page</h1><p>当前JSP页面对象（相当于Java中的this）</p>
+<h1 id="9-exception"><a href="#9-exception" class="headerlink" title="9.exception"></a>9.exception</h1><p>异常对象  </p>
+<h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h1 id="JSP四大范围对象（从小到大）"><a href="#JSP四大范围对象（从小到大）" class="headerlink" title="JSP四大范围对象（从小到大）"></a>JSP四大范围对象（从小到大）</h1><p>1.pageContext（也称page对象,但不是九大内置对象中的page） 范围：当前页面有效，跳转后无效<br>2.request 范围：同一次请求有效，其他请求无效（请求转发有效，重定向无效）<br>3.session 范围：同一次会话有效（无论怎么跳转都有效，关闭或者切换浏览器会无效）<br>4.application 范围：全局有效（整个项目有效，切换浏览器仍有效，关闭服务或其他项目则无效）（补充JNDI：关闭服务或其他项目共享也有效）  </p>
+<h3 id="以上4个对象共有方法"><a href="#以上4个对象共有方法" class="headerlink" title="以上4个对象共有方法"></a>以上4个对象共有方法</h3><p>Object getAttribute(String name):根据属性名，获取属性值<br>void setAtribute(String name,Object obj):设置属性值（新增和修改，如果不存在则新建一个，如果存在则修改）<br>void removeAttribute(String name):根据属性名，删除对象<br>在使用时尽量使用范围小的。因为范围大的对象性能也大<br>时间2019/4/7  </p>
 
       
 
