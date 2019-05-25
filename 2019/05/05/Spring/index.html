@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | XZZY233 BLOG</title>
+  <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Spring1.IOC（控制反转 DI：依赖注入）1.1搭建环境下载jar包必须的jar包（5个+1个）：spring-aop.jar :开发AOP特性spring-beans.jar ：处理beanspring-context.jar ：处理上下文spring-core.jar ：核心spring-expression.jar ：Spring表达式 EL/jtsl三方提供的日志jar：commo">
+<meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/05/Spring/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
+<meta property="og:description" content="Spring1.IOC（控制反转 DI：依赖注入）1.1搭建环境下载jar包必须的jar包（5个+1个）：spring-aop.jar :开发AOP特性spring-beans.jar ：处理beanspring-context.jar ：处理上下文spring-core.jar ：核心spring-expression.jar ：Spring表达式 EL/jtsl三方提供的日志jar：commo">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-25T07:28:32.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
+<meta name="twitter:description" content="Spring1.IOC（控制反转 DI：依赖注入）1.1搭建环境下载jar包必须的jar包（5个+1个）：spring-aop.jar :开发AOP特性spring-beans.jar ：处理beanspring-context.jar ：处理上下文spring-core.jar ：核心spring-expression.jar ：Spring表达式 EL/jtsl三方提供的日志jar：commo">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -150,235 +154,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="1-IOC（控制反转-DI：依赖注入）"><a href="#1-IOC（控制反转-DI：依赖注入）" class="headerlink" title="1.IOC（控制反转 DI：依赖注入）"></a>1.IOC（控制反转 DI：依赖注入）</h2><h3 id="1-1搭建环境"><a href="#1-1搭建环境" class="headerlink" title="1.1搭建环境"></a>1.1搭建环境</h3><p>下载jar包<br>必须的jar包（5个+1个）：<br>spring-aop.jar :开发AOP特性<br>spring-beans.jar ：处理bean<br>spring-context.jar ：处理上下文<br>spring-core.jar ：核心<br>spring-expression.jar ：Spring表达式 EL/jtsl<br>三方提供的日志jar：commons-logging.jar  </p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p>编写配置文件  </p>
+<h3 id="1-2开发Spring程序（IOC）"><a href="#1-2开发Spring程序（IOC）" class="headerlink" title="1.2开发Spring程序（IOC）"></a>1.2开发Spring程序（IOC）</h3><p>1.区别：原来：需要new对象；需要给对象属性赋值；<br>    //一般方式<br>    Student student = new Student();<br>    student.setStuNo(1);<br>    student.setStuName(“zs”);<br>    student.setStuAge(23);<br>    System.out.println(student);<br>现在：使用配置文件创建对象（springIOC容器）；使用配置文件给属性赋值；<br>    //Spring方式:spring上下文对象context<br>    ApplicationContext context = new ClassPathXmlApplicationContext  (“applicationContext.xml”);<br>    Student student = (Student)context.getBean(“student”);<br>    System.out.println(student);<br>spring帮new一个对象，并赋值。<br>2.new对象原来：创建对象非常零散，造成后期维护较为麻烦。<br>现在（简单工厂）：可以将new集中起来，方便后期维护。  </p>
+<h3 id="spring-IOC容器（什么都能放：超级工厂）"><a href="#spring-IOC容器（什么都能放：超级工厂）" class="headerlink" title="spring IOC容器（什么都能放：超级工厂）"></a>spring IOC容器（什么都能放：超级工厂）</h3><p>IOC：控制反转<br>反转的是：获取对象的方式<br>IOC改名为DI（依赖注入）：1.放到容器中；2.拿  </p>
+<h3 id="IOC容器赋值"><a href="#IOC容器赋值" class="headerlink" title="IOC容器赋值"></a>IOC容器赋值</h3><p>如果是简单类型（8个基本+String），使用value；<br>如果是对象类型，使用ref（id值），实现了对象与对象之间的依赖关系；<br>依赖注入底层是通过反射实现的。  </p>
+<h3 id="依赖注入3种方式"><a href="#依赖注入3种方式" class="headerlink" title="依赖注入3种方式"></a>依赖注入3种方式</h3><ol>
+<li>set方式的依赖注入；<br>&lt;property> </li>
+<li>构造器（构造方法）注入；<br>&lt;constructor-arg> 可以有索引index，也可以指定name，还可以类型type。  </li>
+<li>P命名空间<br>引入P命名空间，xmlns:p=”<a href="http://www.springframework.org/schema/p&quot;" target="_blank" rel="noopener">http://www.springframework.org/schema/p&quot;</a><br>&lt;p:简单类型=””>空格&lt;p:对象类型-ref=””>    </li>
+</ol>
+<p>注意：无论时String还是int/short/long，再赋值时都是value=”值”，因此建议此时配合name\type。  </p>
+<h3 id="注入各种集合数据类型："><a href="#注入各种集合数据类型：" class="headerlink" title="注入各种集合数据类型："></a>注入各种集合数据类型：</h3><p>array：<br><code>&lt;array&gt; &lt;value&gt;足球a&lt;/value&gt; &lt;value&gt;篮球a&lt;/value&gt; &lt;value&gt;乒乓球a&lt;/value&gt; &lt;/array&gt;</code><br>set：<br><code>&lt;set&gt; &lt;value&gt;足球s&lt;/value&gt; &lt;value&gt;篮球s&lt;/value&gt; &lt;value&gt;乒乓球s&lt;/value&gt; &lt;/set&gt;</code><br>list：<br><code>&lt;list&gt; &lt;value&gt;足球l&lt;/value&gt; &lt;value&gt;篮球l&lt;/value&gt; &lt;value&gt;乒乓球l&lt;/value&gt; &lt;/list&gt;</code><br>map：<br><code>&lt;map&gt; &lt;entry&gt; &lt;key&gt; &lt;value&gt;footballm&lt;/value&gt; &lt;/key&gt; &lt;value&gt;足球m&lt;/value&gt; &lt;/entry&gt; &lt;/map&gt;</code><br>properties：<br><code>&lt;props&gt; &lt;prop key=&quot;footballp&quot;&gt;足球p&lt;/prop&gt; &lt;prop key=&quot;basketballp&quot;&gt;篮球p&lt;/prop&gt; &lt;prop key=&quot;pingpongp&quot;&gt;乒乓球p&lt;/prop&gt; &lt;/props&gt;</code>    </p>
+<h3 id="value属性和value子标签的区别"><a href="#value属性和value子标签的区别" class="headerlink" title="value属性和value子标签的区别"></a>value属性和value子标签的区别</h3><p>value属性需要加双引号； value标签不需要双引号；<br>value属性没有type（构造方法注入才有）； value标签有type（需要写全类名：java.lang.String）；<br>特殊符号（&lt;或&amp;）：value属性需要使用（&lt; : &amp;lt）（&amp; : &amp;amp）； value标签同一，还可以：&lt;![CDATA][任意]&gt;；  </p>
+<h3 id="处理空值”-“和null"><a href="#处理空值”-“和null" class="headerlink" title="处理空值” “和null"></a>处理空值” “和null</h3><p>赋空值null：<code>&lt;null/&gt;</code>不需要再写value；<br>赋空值” “: 子标签：<code>&lt;value&gt;&lt;/value&gt;</code>;属性:value=””;  </p>
+<h3 id="IOC要定义bean，必须要有对象的无参构造方法"><a href="#IOC要定义bean，必须要有对象的无参构造方法" class="headerlink" title="IOC要定义bean，必须要有对象的无参构造方法"></a>IOC要定义bean，必须要有对象的无参构造方法</h3><h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>自动装配（前提：只适用于引用类型ref）；约定优于配置<br>autowire=”byName”（本质byId）<br>byName：其他bean的id值=该类的属性名，则自动装配;<br>还有byType:其他bean的类型（class）是否与该类的属性类型是否一致；<br>constructor:其他bean的类型（class）是否与该类的构造方法参数的类型一致；<br>全部默认自动装配，在头文件中设置 ：<code>default-autowire=&quot;byName&quot;</code> ，虽然可以减少代码量，但是会降低代码的可读性，不建议写太多；  </p>
+<h3 id="使用注解定义bean"><a href="#使用注解定义bean" class="headerlink" title="使用注解定义bean"></a>使用注解定义bean</h3><p>使用注解定义bean：通过注解的形式将bean以及相应的属性值放入IOC容器；<br>&lt;context:component-scan base-package=”com.hx.dao”&gt;<br>&lt;/context:component-scan&gt;<br>Spring在启动时，会根据base-package在该包中扫描所有类，查找这些类是否有注解，如果有就加入；   </p>
+<h3 id="注解范围"><a href="#注解范围" class="headerlink" title="注解范围"></a>注解范围</h3><p>@Component:范围很大；<br>@Repository(仓库):可以注解Dao层；<br>@Serviece:注解service层；<br>@Controller：注解控制层；  </p>
+<h3 id="使用注解实现事务（声明式事务）（事务增删改数据库）"><a href="#使用注解实现事务（声明式事务）（事务增删改数据库）" class="headerlink" title="使用注解实现事务（声明式事务）（事务增删改数据库）"></a>使用注解实现事务（声明式事务）（事务增删改数据库）</h3><p>导jar包： </p>
+<ol>
+<li>jar包：spring-tx-4.3.9.RELEASE  </li>
+<li>驱动包：ojdbc.jar  </li>
+<li>链接池使用的数据源：commons-dbcp.jar  </li>
+<li>链接池：commons-pool.jar  </li>
+<li>spring-jdbc-4.3.9.RELEASE  </li>
+<li>aopalliance.jar<br>配置：  </li>
+<li>jdbc\mybatis\spring<br>持续更新</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/24/设计模式/" class="archive-article-date">
-  	<time datetime="2019-05-24T12:14:45.861Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/05/Spring/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/java内存/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:23:53.733Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/排序算法/" class="archive-article-date">
-  	<time datetime="2019-05-22T04:36:11.787Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/05/09/Java集合/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/05/在开发安卓中遇到的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/编程词汇/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:51:48.756Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/代码报错集合/" class="archive-article-date">
-  	<time datetime="2019-05-19T07:19:40.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/15/MVC/" class="archive-article-date">
-  	<time datetime="2019-05-15T00:16:53.730Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/14/mybatis/" class="archive-article-date">
-  	<time datetime="2019-05-14T14:49:03.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/Java集合/" class="archive-article-date">
-  	<time datetime="2019-05-09T01:15:25.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/Spring/" class="archive-article-date">
-  	<time datetime="2019-05-05T07:26:40.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/在开发安卓中遇到的问题/" class="archive-article-date">
-  	<time datetime="2019-05-05T01:19:44.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

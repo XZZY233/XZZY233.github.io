@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | XZZY233 BLOG</title>
+  <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="javaJava集合Java集合可分为Set、List、Queue、Map四种。set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）map：代表具有映射关系的集合；queue：代表一种队列集合；Properties是一个双列集合；  数组与集合的区别1.数组的长度不可变；2.数组不能存储具有映射关系的数据">
+<meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/09/Java集合/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
+<meta property="og:description" content="javaJava集合Java集合可分为Set、List、Queue、Map四种。set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）map：代表具有映射关系的集合；queue：代表一种队列集合；Properties是一个双列集合；  数组与集合的区别1.数组的长度不可变；2.数组不能存储具有映射关系的数据">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-25T07:22:54.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
+<meta name="twitter:description" content="javaJava集合Java集合可分为Set、List、Queue、Map四种。set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）map：代表具有映射关系的集合；queue：代表一种队列集合；Properties是一个双列集合；  数组与集合的区别1.数组的长度不可变；2.数组不能存储具有映射关系的数据">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -150,235 +154,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java集合" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><p>Java集合可分为Set、List、Queue、Map四种。<br>set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）<br>list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）<br>map：代表具有映射关系的集合；<br>queue：代表一种队列集合；<br>Properties是一个双列集合； </p>
+<h2 id="数组与集合的区别"><a href="#数组与集合的区别" class="headerlink" title="数组与集合的区别"></a>数组与集合的区别</h2><p>1.数组的长度不可变；<br>2.数组不能存储具有映射关系的数据；<br>3.数组只能存储同一类型的元素，集合可以存储不同类型元素；<br>4.数组可以存储基本数据类型，也可以存储引用数据类型，但是集合只能存储引用类型（基本数据类型是分配在栈上的，而引用类型是分配在堆上）；<br>4.1基本数据类型：byte：Java中最小的数据类型，在内存中占8位(bit)，即1个字节，取值范围-128~127，默认值0；<br>short：短整型，在内存中占16位，即2个字节，取值范围-32768~32717，默认值0；<br>int：整型，用于存储整数，在内在中占32位，即4个字节，取值围-2147483648~2147483647，默认值0；<br>long：长整型，在内存中占64位，即8个字节-2^63~2^63-1，默认值0L；<br>float：浮点型，在内存中占32位，即4个字节，用于存储带小数点的数字（与double的区别在于float类型有效小数点只有6~7位），默认值0；<br>double：双精度浮点型，用于存储带有小数点的数字，在内存中占64位，即8个字节，默认值0；<br>char：字符型，用于存储单个字符，占16位，即2个字节，取值范围0~65535，默认值为空；<br>boolean：布尔类型，占1个字节，用于判断真或假（仅有两个值，即true、false），默认值false；<br>4.2引用数据类型：<br>数组<br>String：字符串型，用于存储一串字符  </p>
+<h2 id="访问不同集合中元素的方法"><a href="#访问不同集合中元素的方法" class="headerlink" title="访问不同集合中元素的方法"></a>访问不同集合中元素的方法</h2><p>1.set：根据元素本身来访问（因为把一个对象加入到Set集合时，Set无法记住添加这个元素的顺序，所以Set无法重复）；<br>2.list：可以直接通过元素的索引来访问；<br>3.map：可以根据每个元素的key来访问value；<br>4.Properties：没有泛型，键和值都是String </p>
+<h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><p>collection接口是Set、List、Queue接口的父接口；<br>Collection方法：<br>1.boolean add（Object o）：添加一个元素，成功返回true；<br>2.boolean addAll（Collection c）：把c集合中的所有元素添加到指定集合里；  </p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态：指的是同一个方法调用，由于对象不同可能会有不同的行为。<br>1.多态是方法的多态，不是属性的多态（多态与属性无关）；<br>2.多态存在的三个必要条件：继承、方法重写、父类引用指向子类对象；<br>3.父类引用指向子类对象后，用该父类引用调用子类重写的方法，此时多态出现；  </p>
+<h2 id="转型"><a href="#转型" class="headerlink" title="转型"></a>转型</h2><h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h3><p>子类可以自动转为父类： Animal d1 = new Dog();  </p>
+<h3 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h3><p>再转回来，强制向下转型：Dog d2 =（Dog）d1；  </p>
+<h2 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h2><p>抽象类：给子类提供一个设计模板，让子类实现。<br>1.有抽象方法的类只能定义成抽象类；<br>2.抽象类不能实例化，即不能用new来实例化抽象类；<br>3.抽象类可以包含属性、方法、构造方法，但是构造方法不能用new来实例，只能用来被子类调用；<br>4.抽象类只能用来被继承；<br>5.抽象方法必须被子类实现；   </p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口：比抽象类还要更抽象，接口中的所有方法都是抽象方法。<br>1.接口中只能定义不变的东西：抽象方法、常量（全大写下划线分割）；（稳定public static final修饰）<br>2.接口中不存在私有；<br><code>3.java中的类是单继承，但是Java中的接口可以多继承</code>  </p>
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>自动装箱和自动拆箱：<br>Integer a = 1；//自动装箱：Integer a = Integer.valueOf(1);<br>int b = a;//自动拆箱：编译器会自动修改成：int b = a.intValue();  </p>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>反射机制：再【运行状态】中；对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。<br>反射提供的功能：在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。<br>获取对象方式（反射入口）：类型class<br>1 class.forName(全类名);<br>2 类名.class;<br>3 对象.getClass();<br>获取方法： .getMethods();<br>获取的是公共的方法（1.本类以及父类、接口中的所有方法；2.符合访问修饰符规律）  </p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof是二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。<br>持续更新</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/24/设计模式/" class="archive-article-date">
-  	<time datetime="2019-05-24T12:14:45.861Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/09/Java集合/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/java内存/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:23:53.733Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/排序算法/" class="archive-article-date">
-  	<time datetime="2019-05-22T04:36:11.787Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/05/14/mybatis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/05/Spring/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/编程词汇/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:51:48.756Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/代码报错集合/" class="archive-article-date">
-  	<time datetime="2019-05-19T07:19:40.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/15/MVC/" class="archive-article-date">
-  	<time datetime="2019-05-15T00:16:53.730Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/14/mybatis/" class="archive-article-date">
-  	<time datetime="2019-05-14T14:49:03.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/Java集合/" class="archive-article-date">
-  	<time datetime="2019-05-09T01:15:25.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/Spring/" class="archive-article-date">
-  	<time datetime="2019-05-05T07:26:40.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/在开发安卓中遇到的问题/" class="archive-article-date">
-  	<time datetime="2019-05-05T01:19:44.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

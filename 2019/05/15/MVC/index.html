@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | XZZY233 BLOG</title>
+  <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="MVCViewView层:页面显示 ControllerController层（Servlet）：接受view层请求，并分发给model层处理。      ModelModel层：1.封装逻辑的模型-功能；2.封装数据的模型-实体类（对应数据库的表）；   三层架构与MVC设计模式的目标一致：都是为了解耦合、提高代码复用；区别：二者对项目理解的角度不同。三层组成（从上到下）：   表示层（USL：">
+<meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/MVC/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
+<meta property="og:description" content="MVCViewView层:页面显示 ControllerController层（Servlet）：接受view层请求，并分发给model层处理。      ModelModel层：1.封装逻辑的模型-功能；2.封装数据的模型-实体类（对应数据库的表）；   三层架构与MVC设计模式的目标一致：都是为了解耦合、提高代码复用；区别：二者对项目理解的角度不同。三层组成（从上到下）：   表示层（USL：">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-25T07:22:25.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
+<meta name="twitter:description" content="MVCViewView层:页面显示 ControllerController层（Servlet）：接受view层请求，并分发给model层处理。      ModelModel层：1.封装逻辑的模型-功能；2.封装数据的模型-实体类（对应数据库的表）；   三层架构与MVC设计模式的目标一致：都是为了解耦合、提高代码复用；区别：二者对项目理解的角度不同。三层组成（从上到下）：   表示层（USL：">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -150,235 +154,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MVC" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>View层:页面显示</p>
+<h3 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h3><p>Controller层（Servlet）：接受view层请求，并分发给model层处理。     </p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>Model层：1.封装逻辑的模型-功能；2.封装数据的模型-实体类（对应数据库的表）；  </p>
+<h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><p>与MVC设计模式的目标一致：都是为了解耦合、提高代码复用；<br>区别：二者对项目理解的角度不同。<br>三层组成（从上到下）：  </p>
+<h3 id="表示层（USL：User-Show-Layer；View、视图层）："><a href="#表示层（USL：User-Show-Layer；View、视图层）：" class="headerlink" title="表示层（USL：User Show Layer；View、视图层）："></a>表示层（USL：User Show Layer；View、视图层）：</h3><p>1.表示前台代码：对应于MVC中的View；用于和用户交互、界面的显示。<br>【技术：jsp html js css jQuery等web前端技术】<br>【代码位置：WebContent】<br>2.表示后台代码：servlet：对应于MVC中的Controller；用于控制跳转、业务逻辑层。<br>【技术：servlet springMVC Struts2】<br>【代码位置：Servlet，位于XXX.servlet包】</p>
+<h3 id="业务逻辑层-BLL-Business-Logic-Layer；service层-："><a href="#业务逻辑层-BLL-Business-Logic-Layer；service层-：" class="headerlink" title="业务逻辑层(BLL:Business Logic Layer；service层)："></a>业务逻辑层(BLL:Business Logic Layer；service层)：</h3><p>1.接受表示层的请求和调用；<br>2.组装数据访问层：<br>逻辑，可拆<br>增 删 改 查<br>例如：删除：删除之前，先查。（组合 ）<br>【代码位置：XXX.service包,也有XXX.manager包，也有XXX.bll包】   </p>
+<h3 id="数据访问层-DAL-Data-Access-Layer；dao层-："><a href="#数据访问层-DAL-Data-Access-Layer；dao层-：" class="headerlink" title="数据访问层(DAL,Data Access Layer；dao层)："></a>数据访问层(DAL,Data Access Layer；dao层)：</h3><p>直接访问数据库操作：<br>原子性，不可拆<br>增 删 改 查<br>【代码位置：XXX.dao包】    </p>
+<h2 id="MVC与三层"><a href="#MVC与三层" class="headerlink" title="MVC与三层"></a>MVC与三层</h2><p>MVC————三层<br>V视图——————表示层（前台）<br>C控制器——————表示层（后台）<br>M模型（封装业务的JavaBean（功能））——————业务逻辑层（功能）<br>M模型（封装业务的JavaBean（功能））——————数据访问层（功能）<br>M模型（封装数据的JavaBean（实体类-表））——————实体类（用来传送数据）  </p>
+<h2 id="三层间的关系"><a href="#三层间的关系" class="headerlink" title="三层间的关系"></a>三层间的关系</h2><p>上层将请求传递给下层，下层处理后，返回给上层。<br>上层依赖于下层，依赖：代码的理解，就是持有成员变量。（现有数据库，才有dao层）  </p>
+<p>###Servlet<br>建议：一个Servlet处理一个功能，因此增删改查（查一个，查多个）需要有四（五）个Servlet。  </p>
+<h2 id="三层的优化"><a href="#三层的优化" class="headerlink" title="三层的优化"></a>三层的优化</h2><h3 id="1-加入接口"><a href="#1-加入接口" class="headerlink" title="1.加入接口"></a>1.加入接口</h3><p>建议面向接口开发：先接口——再实现类<br>接口与实现类的命名规范：<br>接口：interface. 起名 I实体类Service(IStudentService)；IStudnetDao<br>实现类：implements. 起名 实体类ServiceImpl(StudentServiceImpl)；StudentDaoImpl<br>接口所在的包：xxx.service; xx.dao<br>实现类所在的包：xxx.service.impl; xx.dao.impl<br>service:<br>dao:<br>接口 x = new 实现类();<br>IStudentDao studentDao = new StudentDaoImpl();  </p>
+<h3 id="2-DBUtil"><a href="#2-DBUtil" class="headerlink" title="2.DBUtil"></a>2.DBUtil</h3><p>通用的数据库帮助类 ，可以简化Dao层的代码量。<br>dao类中存在大量的冗余。<br>帮助类 一半建议写在 xxx.util包</p>
+<p>A类{<br> a(){<br> B.connection<br> }<br>} </p>
+<p>B类{<br> static Connection connection(现:静态全局变量)<br> b(){<br> Connection connection(原)<br> }<br>}  </p>
+<h3 id="方法重构"><a href="#方法重构" class="headerlink" title="方法重构"></a>方法重构</h3><p>将多个方法的共同代码提炼出来，单独写在一个方法中。  </p>
+<h3 id="web调试"><a href="#web调试" class="headerlink" title="web调试"></a>web调试</h3><p>与java调试只有启动方式不同。<br>jsp翻译成的java以及编译后的class文件，存在于tomcat中的work目录中。<br>时间2019/5/25 </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/24/设计模式/" class="archive-article-date">
-  	<time datetime="2019-05-24T12:14:45.861Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/15/MVC/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/java内存/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:23:53.733Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/排序算法/" class="archive-article-date">
-  	<time datetime="2019-05-22T04:36:11.787Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/05/19/代码报错集合/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/14/mybatis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/20/编程词汇/" class="archive-article-date">
-  	<time datetime="2019-05-20T02:51:48.756Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/代码报错集合/" class="archive-article-date">
-  	<time datetime="2019-05-19T07:19:40.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/15/MVC/" class="archive-article-date">
-  	<time datetime="2019-05-15T00:16:53.730Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/14/mybatis/" class="archive-article-date">
-  	<time datetime="2019-05-14T14:49:03.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/Java集合/" class="archive-article-date">
-  	<time datetime="2019-05-09T01:15:25.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/Spring/" class="archive-article-date">
-  	<time datetime="2019-05-05T07:26:40.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/在开发安卓中遇到的问题/" class="archive-article-date">
-  	<time datetime="2019-05-05T01:19:44.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
