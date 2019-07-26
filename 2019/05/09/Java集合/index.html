@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="XZZY233 BLOG">
 <meta property="og:description" content="javaJava集合Java集合可分为Set、List、Queue、Map四种。set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）map：代表具有映射关系的集合；queue：代表一种队列集合；Properties是一个双列集合；  数组与集合的区别1.数组的长度不可变；2.数组不能存储具有映射关系的数据">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-25T07:22:54.868Z">
+<meta property="og:updated_time" content="2019-07-02T12:55:10.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
 <meta name="twitter:description" content="javaJava集合Java集合可分为Set、List、Queue、Map四种。set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）map：代表具有映射关系的集合；queue：代表一种队列集合；Properties是一个双列集合；  数组与集合的区别1.数组的长度不可变；2.数组不能存储具有映射关系的数据">
@@ -169,8 +169,29 @@
 <h2 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h2><p>抽象类：给子类提供一个设计模板，让子类实现。<br>1.有抽象方法的类只能定义成抽象类；<br>2.抽象类不能实例化，即不能用new来实例化抽象类；<br>3.抽象类可以包含属性、方法、构造方法，但是构造方法不能用new来实例，只能用来被子类调用；<br>4.抽象类只能用来被继承；<br>5.抽象方法必须被子类实现；   </p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口：比抽象类还要更抽象，接口中的所有方法都是抽象方法。<br>1.接口中只能定义不变的东西：抽象方法、常量（全大写下划线分割）；（稳定public static final修饰）<br>2.接口中不存在私有；<br><code>3.java中的类是单继承，但是Java中的接口可以多继承</code>  </p>
 <h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>自动装箱和自动拆箱：<br>Integer a = 1；//自动装箱：Integer a = Integer.valueOf(1);<br>int b = a;//自动拆箱：编译器会自动修改成：int b = a.intValue();  </p>
-<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>反射机制：再【运行状态】中；对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。<br>反射提供的功能：在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。<br>获取对象方式（反射入口）：类型class<br>1 class.forName(全类名);<br>2 类名.class;<br>3 对象.getClass();<br>获取方法： .getMethods();<br>获取的是公共的方法（1.本类以及父类、接口中的所有方法；2.符合访问修饰符规律）  </p>
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof是二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。<br>持续更新</p>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>反射机制：在【运行状态】中；对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。<br>反射提供的功能：在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。<br>获取对象方式（反射入口）：类型class<br>1 class.forName(全类名);<br>2 类名.class;<br>3 对象.getClass();<br>获取方法： .getMethods();<br>获取的是公共的方法（1.本类以及父类、接口中的所有方法；2.符合访问修饰符规律）<br><strong>反射(reflection)[属于java动态性]</strong><br>反射：指的是可以在运行时加载、探知、使用编译期间完全未知的类。<br>程序在运行状态中，可以动态加载一个只有名称的类，对于任意一个已加载的类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；<br><code>Class c = Class.forName(&quot;包名.类名&quot;);</code><br>加载完类之后，在堆内存中，就产生了一个Class类型的对象（一个类只有一个Class对象），这个对象就包含了完整的类的结构信息。我们可以通过这个对象看到类的结构。这个对象就像一面镜子，透过这个镜子看到类的结构，此为反射。  </p>
+<h4 id="反射方法（类）："><a href="#反射方法（类）：" class="headerlink" title="反射方法（类）："></a>反射方法（类）：</h4><ol>
+<li>.getName();//获得包名+类名  </li>
+<li>.getSimpleName();//获得类名  <h4 id="反射方法（属性）："><a href="#反射方法（属性）：" class="headerlink" title="反射方法（属性）："></a>反射方法（属性）：</h4></li>
+<li>Field[] fields = clazz.getFields();//获得类的所有属性（public） </li>
+<li>Field[] fields = clazz.getDeclaredFields();//获得所有声明的属性（private..）  <h4 id="反射方法（方法）："><a href="#反射方法（方法）：" class="headerlink" title="反射方法（方法）："></a>反射方法（方法）：</h4></li>
+<li>Method[] methods = clazz.getDeclareMethods();//获得所有方法</li>
+<li>Method method = clazz.getDeclareMethod(“方法名”,参数类型);//参数类型是为了方法重载  <h4 id="反射方法（构造器）："><a href="#反射方法（构造器）：" class="headerlink" title="反射方法（构造器）："></a>反射方法（构造器）：</h4></li>
+<li>Constructor[] constructors = clazz.getDeclaredConstructors();//所有构造方法</li>
+<li>.getSimpleName();//获得类名  </li>
+</ol>
+<p>setAccessible(true):可以提升性能（反射会将提性能，尤其是频繁调用），单安全会降低。</p>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof是二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。  </p>
+<h2 id="java可变参数"><a href="#java可变参数" class="headerlink" title="java可变参数"></a>java可变参数</h2><pre><code>public void foo(String...varargs){}  
+foo(&quot;arg1&quot;, &quot;arg2&quot;, &quot;arg3&quot;);  
+//上述过程和下面的调用是等价的  
+foo(new String[]{&quot;arg1&quot;, &quot;arg2&quot;, &quot;arg3&quot;});
+</code></pre><p>多用于dao层（数据访问层）。    </p>
+<h2 id="继承关系下，构造实例化过程"><a href="#继承关系下，构造实例化过程" class="headerlink" title="继承关系下，构造实例化过程"></a>继承关系下，构造实例化过程</h2><p>先执行父类构造函数，再执行子类构造函数，在父类构造方法执行完成之前，成员变量都是默认值。   </p>
+<h2 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h2><p>通常用于接口和抽象类（事件）。<br>方法中直接实现接口（抽象类），不new新的实现类，直接new实现。  </p>
+<h2 id="类型转换（String转int-int转String）"><a href="#类型转换（String转int-int转String）" class="headerlink" title="类型转换（String转int|int转String）"></a>类型转换（String转int|int转String）</h2><p>1.String转int<br>int i = Integer.parseInt(s);<br>2.int转String<br>String s = String.valueOf(value); //其中value为任意一种数字类型。     </p>
+<h2 id="注解（Annotation）"><a href="#注解（Annotation）" class="headerlink" title="注解（Annotation）"></a>注解（Annotation）</h2><p>作用：可以被其他程序读取。<br>格式：@注解名；还可以添加一些参数：@SuppressWarnings(value=”unchecked”)。<br>使用对象：package、class、method、field等，还可以通过反射机制实现对这些元数据的访问。<br>常见注解：1.@Override:表示一个方法声明打算重写超类中的另一个方法声明。<br>2.@Deprecated:表示不鼓励使用。<br>3.@SuppressWarnings:用来抑制编译时的警告信息。<br>反射：@Retention(RetentionPolicy.RUNTIME) :运行时有效。</p>
+<p>持续更新</p>
 
       
 

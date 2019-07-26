@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="XZZY233 BLOG">
 <meta property="og:description" content="Java内存Java虚拟机的内存可以分为三个区域：栈（stack）、堆（heap）、方法区（method area）（方法区也在堆中）。    栈的特点如下：1.栈描述的是方法执行的内存模型，每个方法被调用都会 创建一个栈帧（存储局部变量、操作数、方法出口等）2.JVM为每个线程创建一个栈，用于存放该线程执行方法的信息（实际参数、局部变量等）3.栈属于线程私有，不能实现线程间的共享！4.栈的存储特">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-25T07:24:48.267Z">
+<meta property="og:updated_time" content="2019-07-26T09:55:11.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
 <meta name="twitter:description" content="Java内存Java虚拟机的内存可以分为三个区域：栈（stack）、堆（heap）、方法区（method area）（方法区也在堆中）。    栈的特点如下：1.栈描述的是方法执行的内存模型，每个方法被调用都会 创建一个栈帧（存储局部变量、操作数、方法出口等）2.JVM为每个线程创建一个栈，用于存放该线程执行方法的信息（实际参数、局部变量等）3.栈属于线程私有，不能实现线程间的共享！4.栈的存储特">
@@ -164,7 +164,8 @@
 <h2 id="堆的特点如下："><a href="#堆的特点如下：" class="headerlink" title="堆的特点如下："></a>堆的特点如下：</h2><p>1.堆用来存储创建好的对象和数组（数组也是对象）<br>2.JVM只有一个堆，被所有线程共享<br>3.堆是一个不连续的内存空间，分配灵活，速度慢    </p>
 <h2 id="方法区（又叫静态区）特点如下："><a href="#方法区（又叫静态区）特点如下：" class="headerlink" title="方法区（又叫静态区）特点如下："></a>方法区（又叫静态区）特点如下：</h2><p>1.JVM只有一个方法区，被所有线程共享！<br>2.方法区实际也是堆，只是用于存储类、常量相关的信息！<br>3.用来存放程序中永远是不变或唯一的内容。（类信息【Class对象】、静态常量、字符串常量等）</p>
 <h2 id="程序执行过程"><a href="#程序执行过程" class="headerlink" title="程序执行过程"></a>程序执行过程</h2><p>[java 类]方法区（类相关信息：1.代码2.静态变量3.静态方法4.字符串常量 例：”名字”） —— 栈（main方法栈帧：局部变量 —— 构造器方法栈帧） —— 堆（对象：成员变量赋初值（int：0 String：null），成员方法）  </p>
-<h1 id="Java虚拟机JVM"><a href="#Java虚拟机JVM" class="headerlink" title="Java虚拟机JVM"></a>Java虚拟机JVM</h1><p>组成部分：1.类加载器子系统2.运行时数据区（内存结构）3.执行引擎<br>堆和方法区：所有线程共享的<br>栈、程序计数器和本地方法栈（native调底层其他语言）：独立的线程<br>GC<br>Java虚拟机调优：fullgc尽可能少执行，gc也少执行<br>垃圾收集<br>垃圾收集算法<br>持续更新</p>
+<h1 id="Java虚拟机JVM"><a href="#Java虚拟机JVM" class="headerlink" title="Java虚拟机JVM"></a>Java虚拟机JVM</h1><p>组成部分：1.类加载器子系统2.运行时数据区（内存结构）3.执行引擎<br>堆和方法区：所有线程共享的<br>栈、程序计数器和本地方法栈（native调底层其他语言）：独立的线程<br>GC<br>Java虚拟机调优：fullgc尽可能少执行，gc也少执行<br>垃圾收集<br>垃圾收集算法    </p>
+<p>持续更新</p>
 
       
 

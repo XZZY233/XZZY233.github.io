@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mybatis持续更新">
+  <meta name="description" content="MybatisMyBatis是一款优秀的持久层框架，它支持定制化SQL、存储过程以及高级映射。MyBatis避免了几乎所有的JDBC代码和手动设置参数以及获取结果集。MyBatis可以使用简单的XML或注解来配置和映射原生类型、接口和Java的POJO（Plain Old Java Objects），普通老式Java对象为数据库中的记录。   1.SqlSessionFactory每个基于 MyB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
 <meta property="og:url" content="http://yoursite.com/2019/05/14/mybatis/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
-<meta property="og:description" content="Mybatis持续更新">
+<meta property="og:description" content="MybatisMyBatis是一款优秀的持久层框架，它支持定制化SQL、存储过程以及高级映射。MyBatis避免了几乎所有的JDBC代码和手动设置参数以及获取结果集。MyBatis可以使用简单的XML或注解来配置和映射原生类型、接口和Java的POJO（Plain Old Java Objects），普通老式Java对象为数据库中的记录。   1.SqlSessionFactory每个基于 MyB">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-25T07:24:40.129Z">
+<meta property="og:updated_time" content="2019-07-24T09:19:25.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
-<meta name="twitter:description" content="Mybatis持续更新">
+<meta name="twitter:description" content="MybatisMyBatis是一款优秀的持久层框架，它支持定制化SQL、存储过程以及高级映射。MyBatis避免了几乎所有的JDBC代码和手动设置参数以及获取结果集。MyBatis可以使用简单的XML或注解来配置和映射原生类型、接口和Java的POJO（Plain Old Java Objects），普通老式Java对象为数据库中的记录。   1.SqlSessionFactory每个基于 MyB">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -159,7 +159,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>持续更新</p>
+        <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>MyBatis是一款优秀的持久层框架，它支持定制化SQL、存储过程以及高级映射。<br>MyBatis避免了几乎所有的JDBC代码和手动设置参数以及获取结果集。<br>MyBatis可以使用简单的XML或注解来配置和映射原生类型、接口和Java的POJO（Plain Old Java Objects），普通老式Java对象为数据库中的记录。  </p>
+<h2 id="1-SqlSessionFactory"><a href="#1-SqlSessionFactory" class="headerlink" title="1.SqlSessionFactory"></a>1.SqlSessionFactory</h2><p>每个基于 MyBatis 的应用都是以一个 SqlSessionFactory 的实例为核心的。<br>SqlSessionFactory 的实例可以通过 SqlSessionFactoryBuilder 获得。<br>而 SqlSessionFactoryBuilder 则可以从 XML 配置文件或一个预先定制的 Configuration 的实例构建出 SqlSessionFactory 的实例。   </p>
+<h3 id="1-1从XML文件中构建SqlSessionFactory的实例"><a href="#1-1从XML文件中构建SqlSessionFactory的实例" class="headerlink" title="1.1从XML文件中构建SqlSessionFactory的实例"></a>1.1从XML文件中构建SqlSessionFactory的实例</h3><p>使用类路径下的资源文件进行配置。<br>但是也可以使用任意的输入流（InputStream）实例，包括字符串形式的文件路径或者 file:// 的 URL 形式的文件路径来配置。<br>MyBatis 包含一个名叫 Resources 的工具类，它包含一些实用方法，可使从 classpath 或其他位置加载资源文件更加容易。<br>如下：<br><code>String resource = &quot;org/mybatis/example/mybatis-config.xml&quot;;</code><br><code>InputStream inputStream = Resources.getResourceAsStream(resource);</code><br><code>SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</code>        </p>
+<h3 id="1-2XML配置文件"><a href="#1-2XML配置文件" class="headerlink" title="1.2XML配置文件"></a>1.2XML配置文件</h3><p>XML 配置文件中包含了对 MyBatis 系统的核心设置，包含获取数据库连接实例的数据源（DataSource）和决定事务作用域和控制方式的事务管理器（TransactionManager）。<br>如下：<br><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</code><br><code>&lt;!DOCTYPE configuration</code><br><code>PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</code><br><code>&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</code><br><code>&lt;configuration\&gt;</code><br><code>&lt;environments default=&quot;development&quot;\&gt;</code><br><code>&lt;environment id=&quot;development&quot;\&gt;</code><br><code>&lt;transactionManager type=&quot;JDBC&quot;/\&gt;</code><br><code>&lt;dataSource type=&quot;POOLED&quot;\&gt;</code><br><code>&lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/\&gt;</code><br><code>&lt;property name=&quot;url&quot; value=&quot;${url}&quot;/\&gt;</code><br><code>&lt;property name=&quot;username&quot; value=&quot;${username}&quot;/\&gt;</code><br><code>&lt;property name=&quot;password&quot; value=&quot;${password}&quot;/\&gt;</code><br><code>&lt;/dataSource\&gt;</code><br><code>&lt;/environment\&gt;</code><br><code>&lt;/environments\&gt;</code><br><code>&lt;mappers\&gt;</code><br><code>&lt;mapper resource=&quot;org/mybatis/example/BlogMapper.xml&quot;/\&gt;</code><br><code>&lt;/mappers\&gt;</code><br><code>&lt;/configuration\&gt;</code><br>要注意 XML 头部的声明，它用来验证 XML 文档正确性。<br>environment 元素体中包含了事务管理和连接池的配置。<br>mappers 元素则是包含一组映射器（mapper），这些映射器的 XML 映射文件包含了 SQL 代码和映射定义信息。   </p>
+<h3 id="1-3从-SqlSessionFactory-中获取-SqlSession"><a href="#1-3从-SqlSessionFactory-中获取-SqlSession" class="headerlink" title="1.3从 SqlSessionFactory 中获取 SqlSession"></a>1.3从 SqlSessionFactory 中获取 SqlSession</h3><p>获得 SqlSession 的实例，SqlSession 完全包含了面向数据库执行 SQL 命令所需的所有方法，可以通过 SqlSession 实例来直接执行已映射的 SQL 语句。<br>如下：<br>SqlSession session = sqlSessionFactory.openSession();<br>try {<br>  Blog blog = (Blog) session.selectOne   (“org.mybatis.example.BlogMapper.selectBlog”, 101);<br>} finally {<br>  session.close();<br>}<br>这种方式能够正常工作，并且对于使用旧版本 MyBatis 的用户来说也比较熟悉。不过现在有了一种更简洁的方式 ——使用正确描述每个语句的参数和返回值的接口（比如 BlogMapper.class），现在不仅可以执行更清晰和类型安全的代码，而且还不用担心易错的字符串字面值以及强制类型转换。<br>如下：<br>SqlSession session = sqlSessionFactory.openSession();<br>try {<br>  BlogMapper mapper = session.getMapper(BlogMapper.class);<br>  Blog blog = mapper.selectBlog(101);<br>} finally {<br>  session.close();<br>}      </p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><h4 id="1-导jar包"><a href="#1-导jar包" class="headerlink" title="1.导jar包"></a>1.导jar包</h4><h4 id="2-在src下新建全局配置文件（编写JDBC四个变量）"><a href="#2-在src下新建全局配置文件（编写JDBC四个变量）" class="headerlink" title="2.在src下新建全局配置文件（编写JDBC四个变量）"></a>2.在src下新建全局配置文件（编写JDBC四个变量）</h4><p>2.1.xml文件<br>2.2.在文件中引入DTD或schema（提示）<br>2.3.  </p>
+<p>&lt;configuration>  </p>
+<p>&lt;environments default=”default”>(default引用environment的id，当前所使用的环境)     </p>
+<p>&lt;environment id=”default”> (声明可以使用的环境)  </p>
+<p>&lt;transactionManager type=”JDBC”>&lt;/transactionManager>(使用原生JDBC事务)   </p>
+<p>&lt;dataSource type=”POOLED”>(连接池)    </p>
+<p>&lt;property name=”driver” value=”com.mysql.jdbc.Driver”/>  </p>
+<p>&lt;property name=”url” value=”jdbc:mysql://localhost:3306/ssm”/>   </p>
+<p>&lt;property name=”username” value=”root”/>   </p>
+<p>&lt;property name=”password” value=”123456”/><br>&lt;/dataSource>    </p>
+<p>&lt;environment><br>&lt;/environments>  </p>
+<p>&lt;mappers>  </p>
+<p>&lt;mapper resource=”包/实体类.xml”/><br>&lt;/mappers><br>&lt;/configuration></p>
+<h4 id="3-编写SQL命令"><a href="#3-编写SQL命令" class="headerlink" title="3.编写SQL命令"></a>3.编写SQL命令</h4><p>3.1.新建以mapper结尾的包，在包下新建：实体类+Mapper.xml<br>3.2.文件作用：编写需要执行的SQL命令(把xml文件理解成实现类)<br>3.3.  </p>
+<p>&lt;mapper namespace=”a.b”(包名.类名) >   </p>
+<p>&lt;select id=”selAll” resultType=”泛型的全路径”>(id:方法名、parameterType:参数类型、resultType:返回值类型:注意：如果方法返回值时list，在resultType中写List的泛型，因为mybatis对jdbc封装，一行一行的读取数据)<br>select * from flower<br>&lt;/select><br>&lt;/mapper><br><strong>XML解析利用反射必须是全路径。</strong>  </p>
+<h4 id="4-测试结果（mybatis单独使用，SSM整合时不需要）"><a href="#4-测试结果（mybatis单独使用，SSM整合时不需要）" class="headerlink" title="4.测试结果（mybatis单独使用，SSM整合时不需要）"></a>4.测试结果（mybatis单独使用，SSM整合时不需要）</h4><h4 id="5-注意"><a href="#5-注意" class="headerlink" title="5.注意"></a>5.注意</h4><p>5.1.resultType=”实体类”（反射），不是集合，因为是对JDBC封装，一次读一行<br>5.2.列名对应同名属性（反射），如果不对应，可以使用别名，即auto Mapping（自动映射）。在3.2之前是通过寻找set和get方法，3.2之后直接寻找属性。</p>
+<h4 id="6-环境搭建详解"><a href="#6-环境搭建详解" class="headerlink" title="6.环境搭建详解"></a>6.环境搭建详解</h4><p>6.1.全局配置文件中内容  </p>
+<p>&lt;transactionManager/>中的属性可选值：<br>1.JDBC：事务管理使用JDBC原生事务管理方式<br>2.MANAGERD：把事务管理转让交给其他容器[setAutoMapping(false)];<br>5.2.&lt;dataSouce/>属性：<br>1.POOLED：使用数据库连接池<br>2.UNPOOLED：不使用数据库连接池，和直接使用JDBC一样<br>3.JNDI：java命名目录接口技术  </p>
+<h4 id="7-数据库连接池"><a href="#7-数据库连接池" class="headerlink" title="7.数据库连接池"></a>7.数据库连接池</h4><p>1.在内存中开辟一块空间，存放多个数据库连接对象<br>2.JDBC Tomcat Pool，直接由tomcat产生数据库连接池<br>3.状态：<br>3.1.active状态：当前连接对象被应用程序使用<br>3.2.idle空闲状态：等待应用程序使用<br>4.使用数据库连接池的目的<br>4.1.在高频率访问数据库时，使用数据库连接池可以降低服务器系统压力，提升程序运行效率<br>4.1.1.小型项目不适用数据库连接池<br>5.实现JDBC tomcat Pool的步骤<br>5.1.在web项目的META-INF中存放context.xml文件，在context.xml编写数据库连接池相关属性：<br>&lt;?xml version=”1.0” encoding=”UTF-8”&gt;  </p>
+<p><context>  </context></p>
+<p><resource driverclassname="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/mybatis" username="root" password="123456" maxactive="50" maxidle="20" name="test" auth="Container" maxwait="1000" type="javax.sql.DataSource" \><br><br>5.2.把项目发布到tomcat中，数据库连接池产生了<br>6.可以在java中使用JNDI获取数据库连接池中对象<br>6.1.Context：上下文接口，context.xml文件对象属性<br>6.2.代码：<br>Context cxt = new InitalContext();<br>DataSource ds = (DataSource)cxt.lookup(“java:com/env/test”);<br>Connection conn = ds.getConnection();<br>6.3.当关闭连接对象时，把连接对象归还给数据库连接池，把状态改变为idle  </resource></p>
+<h4 id="8-三种查询方式"><a href="#8-三种查询方式" class="headerlink" title="8.三种查询方式"></a>8.三种查询方式</h4><p>1.selectList()返回值为List&lt;resultType属性控制&gt;<br>1.1.适用于查询结果都需要遍历的需求<br>1.2.代码<br><code>&lt;select id=&quot;selectAll&quot; resultType=&quot;com.pojo.Flower&quot;&gt;
+select * from flower
+&lt;/select&gt;</code><br>2.selectOne()返回值为变量或一行数据时<br>2.1.适用于查询结果都需要遍历的需求<br>2.2.代码<br><code>&lt;select id=&quot;selectOne&quot; resultType=&quot;int&quot;&gt;
+select count(*) from flower
+&lt;/select&gt;</code><br>3.selectMap()返回值为Map<br>3.1.适用于需求需要在查询结果中通过某列的值取到这行数据的需求；Map&lt;key,resultType控制&gt;<br>3.2.代码<br><code>&lt;select id=&quot;c&quot; resultType=&quot;com.pojo.Flower&quot;&gt;
+select * from flower
+&lt;/select&gt;</code></p>
+<p>持续更新</p>
 
       
 

@@ -152,12 +152,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-平时积累" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p>底层思维：向下，如何把握机器底层从微观理解对象构造（语言构造、编译转换、内存模型、运行时机制）<br>抽象思维：向上，如何将我们的周围世界抽象为程序代码（面向对象、组件封装、设计模式、架构模式）<br>分解：分而治之<br>抽象：忽视非本质细节，而去处理泛化和理想化了的对象模型<br>持续更新</p>
+        <h1 id="平时积累"><a href="#平时积累" class="headerlink" title="平时积累"></a>平时积累</h1><h3 id="1-创建java类中类出现is-not-an-enclosing-class"><a href="#1-创建java类中类出现is-not-an-enclosing-class" class="headerlink" title="1.创建java类中类出现is not an enclosing class"></a>1.创建java类中类出现is not an enclosing class</h3><p>public class A{<br>    public class B{<br>    }<br>}<br>需要实例B类时：A.B ab = new A.B(); 就会报错：“is not an enclosing class”<br>A a = new A();<br>A.B ab = a.new B();<br>没有静态（static）的类中类不能使用外部类进行操作，必须用实例来实例类中类。  </p>
+<h3 id="2-接口回调"><a href="#2-接口回调" class="headerlink" title="2.接口回调"></a>2.接口回调</h3><h3 id="3-Eclipse出现“找不到或无法加载主类”的错误"><a href="#3-Eclipse出现“找不到或无法加载主类”的错误" class="headerlink" title="3.Eclipse出现“找不到或无法加载主类”的错误"></a>3.Eclipse出现“找不到或无法加载主类”的错误</h3><p>打开eclipse中run→run configurations →删除要运行的class名称→apply→运行main函数 </p>
+<h3 id="4-toString-方法"><a href="#4-toString-方法" class="headerlink" title="4.toString()方法"></a>4.toString()方法</h3><p>public String toString()返回该对象的字符串表示，通常，ToString方法会返回一个“以文本方式表示”此对象的字符串。结果应是一个简明但易于读懂的信息表达式。</p>
+<h3 id="5-抽象类和接口的含义以及区别"><a href="#5-抽象类和接口的含义以及区别" class="headerlink" title="5.抽象类和接口的含义以及区别"></a>5.抽象类和接口的含义以及区别</h3><p>抽象类：抽象类不能创建实例，它只能作为父类被继承。抽象类是从多个具体类中抽象出来的父类，它具有更高层次的抽象。从多个具有相同特征的类中抽象出一个抽象类，以这个抽象类作为其子类的模板，从而避免了子类的随意性。<br>(1) 抽象方法只作声明，而不包含实现，可以看成是没有实现体的虚方法<br>(2) 抽象类不能被实例化<br>(3) 抽象类可以但不是必须有抽象属性和抽象方法，但是一旦有了抽象方法，就一定要把这个类声明为抽象类<br>(4) 具体派生类必须覆盖基类的抽象方法<br>(5) 抽象派生类可以覆盖基类的抽象方法，也可以不覆盖。如果不覆盖，则其具体派生类必须覆盖它们<br>接口：<br>(1) 接口不能被实例化<br>(2) 接口只能包含方法声明<br>(3) 接口的成员包括方法、属性、索引器、事件<br>(4) 接口中不能包含常量、字段(域)、构造函数、析构函数、静态成员<br>接口和抽象类的区别：<br>（1）抽象类可以有构造方法，接口中不能有构造方法。<br>（2）抽象类中可以有普通成员变量，接口中没有普通成员变量<br>（3）抽象类中可以包含静态方法，接口中不能包含静态方法<br>（4） 一个类可以实现多个接口，但只能继承一个抽象类。<br>（5）接口可以被多重实现，抽象类只能被单一继承<br>（6）如果抽象类实现接口，则可以把接口中方法映射到抽象类中作为抽象方法而不必实现，而在抽象类的子类中实现接口中方法  </p>
+<h3 id="6-”-“和equals（）的区别"><a href="#6-”-“和equals（）的区别" class="headerlink" title="6.”==“和equals（）的区别"></a>6.”==“和equals（）的区别</h3><p>String str1 = new String(“hello”);<br>String str2 = new String(“hello”);<br>System.out.println(str1==str2);//false<br>System.out.println(str1.equals(str2));<br>对于这8种基本数据类型的变量，变量直接存储的是“值”，因此在用关系操作符==来进行比较时，比较的就是 “值” 本身。要注意浮点型和整型都是有符号类型的，而char是无符号类型的（char类型取值范围为0~2^16-1)。<br>而对于非基本数据类型的变量，在一些书籍中称作为 引用类型的变量。比如上面的str1就是引用类型的变量，引用类型的变量存储的并不是 “值”本身，而是于其关联的对象在内存中的地址。比如下面这行代码：<br>对于==，如果作用于基本数据类型的变量，则直接比较其存储的 “值”是否相等；<br>　　　　如果作用于引用类型的变量，则比较的是所指向的对象的地址<br>对于equals方法，注意：equals方法不能作用于基本数据类型的变量<br>　　　　如果没有对equals方法进行重写，则比较的是引用类型的变量所指向的对象的地址；<br>　　　　诸如String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容。  </p>
+<h3 id="7-任何类型遇到String都会变成String；"><a href="#7-任何类型遇到String都会变成String；" class="headerlink" title="7.任何类型遇到String都会变成String；"></a>7.任何类型遇到String都会变成String；</h3><h3 id="8-在编写MVC中view的页面向servlet跳转时，action-”LoginServlet”，这时会报404错。还需要web-xml中编写servlet路径："><a href="#8-在编写MVC中view的页面向servlet跳转时，action-”LoginServlet”，这时会报404错。还需要web-xml中编写servlet路径：" class="headerlink" title="8.在编写MVC中view的页面向servlet跳转时，action=”LoginServlet”，这时会报404错。还需要web.xml中编写servlet路径："></a>8.在编写MVC中view的页面向servlet跳转时，action=”LoginServlet”，这时会报404错。还需要web.xml中编写servlet路径：</h3><p> &lt;servlet><br>      <servlet-name>LoginServlet</servlet-name><br>      <servlet-class>com.hx.servlet.LoginServlet</servlet-class><br>  &lt;/servlet>  </p>
+<p>  <servlet-mapping><br>      <servlet-name>LoginServlet</servlet-name><br>      <url-pattern>/LoginServlet</url-pattern><br>  </servlet-mapping><br>这样就可以了。</p>
+<h3 id="9-try-catch捕获异常时：如果捕获的是范围小的异常时，比如（SQLException），以免有遗漏，应该再捕获一个范围大的异常如（Exception）；"><a href="#9-try-catch捕获异常时：如果捕获的是范围小的异常时，比如（SQLException），以免有遗漏，应该再捕获一个范围大的异常如（Exception）；" class="headerlink" title="9.try catch捕获异常时：如果捕获的是范围小的异常时，比如（SQLException），以免有遗漏，应该再捕获一个范围大的异常如（Exception）；"></a>9.try catch捕获异常时：如果捕获的是范围小的异常时，比如（SQLException），以免有遗漏，应该再捕获一个范围大的异常如（Exception）；</h3><p>try{}<br>catch (SQLException e) {<br>    e.printStackTrace();<br>}catch (Exception e) {<br>    e.printStackTrace();<br>}  </p>
+<h3 id="10-JSP的常见对象在servlet里得到的方法"><a href="#10-JSP的常见对象在servlet里得到的方法" class="headerlink" title="10.JSP的常见对象在servlet里得到的方法"></a>10.JSP的常见对象在servlet里得到的方法</h3><p>out request reponse session application<br>out： PrintWriter out = response.getWriter();<br>session：request.getSession();<br>application: request.getServletContext   </p>
+<h3 id="11-编码问题（乱码）"><a href="#11-编码问题（乱码）" class="headerlink" title="11.编码问题（乱码）"></a>11.编码问题（乱码）</h3><p>//设置响应编码<br>response.setContentType(“text/html; charset=UTF-8”);<br>response.setCharacterEncoding(“utf-8”);<br>request.setCharacterEncoding(“utf-8”);  </p>
+<h3 id="12-页面跳转"><a href="#12-页面跳转" class="headerlink" title="12.页面跳转"></a>12.页面跳转</h3><p>因为request域中有数据，因此需要通过请求转发的方式跳转（重定向会丢失request域）</p>
+<h3 id="13-范围"><a href="#13-范围" class="headerlink" title="13.范围"></a>13.范围</h3><p>范围：pageContext&lt;request&lt;session&lt;application  </p>
+<h3 id="15-Could-not-publish-server-configuration-for-Tomcat-v8-5-Server-at-localhost"><a href="#15-Could-not-publish-server-configuration-for-Tomcat-v8-5-Server-at-localhost" class="headerlink" title="15.Could not publish server configuration for Tomcat v8.5 Server at localhost."></a>15.Could not publish server configuration for Tomcat v8.5 Server at localhost.</h3><p>Multiple Contexts have a path of “/ThreeTierSample”.<br>在Servers中的server.xml中以及存在路径（path）ThreeTierSample，删除或修改就好了  </p>
+<h3 id="16-程序的健壮性"><a href="#16-程序的健壮性" class="headerlink" title="16.程序的健壮性"></a>16.程序的健壮性</h3><h3 id="17-在数据访问层处理异常和在控制器中处理异常，service中只抛出异常"><a href="#17-在数据访问层处理异常和在控制器中处理异常，service中只抛出异常" class="headerlink" title="17.在数据访问层处理异常和在控制器中处理异常，service中只抛出异常"></a>17.在数据访问层处理异常和在控制器中处理异常，service中只抛出异常</h3><h3 id="18-注解"><a href="#18-注解" class="headerlink" title="18.注解"></a>18.注解</h3><p>大部分注解都有默认属性，如果注解中只给默认属性赋值，可以省略属性名<br>否则注解的（属性名=属性值）格式<br>如果一个属性是数组类型格式：属性名={值，值}，如果该数组只有一个值，可以省略大括号<br>如果类不是基本数据类型或string而是一个类类型，语法：属性名=@类型<br>注解中@表示引用注解声明    </p>
+<h3 id="19-web路径"><a href="#19-web路径" class="headerlink" title="19.web路径"></a>19.web路径</h3><p>全路径：只要路径中以/开头的都叫做全路径，从项目根目录（webContent）出发找到其他资源的过程<br>相对路径：只要不以/开头的都是相对路径，相对路径是从当前资源出发找到其他资源的过程<br>如果请求转发 / 表示webContent目录<br>如果是重定向，静态资源引用，必须&lt;img src=””/>&lt;a href=””> &lt;script src=””/> css引用时，其中/都表示的是tomcat的webapps文件夹根目录</p>
+<p>持续更新</p>
 
       
 
@@ -170,7 +185,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/24/设计模式/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/26/平时积累/">展开全文 >></a>
         </p>
       
 
@@ -200,405 +215,21 @@
 
 
   
-    <article id="post-java内存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Java内存"><a href="#Java内存" class="headerlink" title="Java内存"></a>Java内存</h1><p>Java虚拟机的内存可以分为三个区域：栈（stack）、堆（heap）、方法区（method area）（方法区也在堆中）。   </p>
-<h2 id="栈的特点如下："><a href="#栈的特点如下：" class="headerlink" title="栈的特点如下："></a>栈的特点如下：</h2><p>1.栈描述的是方法执行的内存模型，每个方法被调用都会 创建一个栈帧（存储局部变量、操作数、方法出口等）<br>2.JVM为每个线程创建一个栈，用于存放该线程执行方法的信息（实际参数、局部变量等）<br>3.栈属于线程私有，不能实现线程间的共享！<br>4.栈的存储特性是“先进后出，后进先出”<br>5.栈是由系统自动分配的，速度快！栈是一个连续的内存空间！    </p>
-<h2 id="堆的特点如下："><a href="#堆的特点如下：" class="headerlink" title="堆的特点如下："></a>堆的特点如下：</h2><p>1.堆用来存储创建好的对象和数组（数组也是对象）<br>2.JVM只有一个堆，被所有线程共享<br>3.堆是一个不连续的内存空间，分配灵活，速度慢    </p>
-<h2 id="方法区（又叫静态区）特点如下："><a href="#方法区（又叫静态区）特点如下：" class="headerlink" title="方法区（又叫静态区）特点如下："></a>方法区（又叫静态区）特点如下：</h2><p>1.JVM只有一个方法区，被所有线程共享！<br>2.方法区实际也是堆，只是用于存储类、常量相关的信息！<br>3.用来存放程序中永远是不变或唯一的内容。（类信息【Class对象】、静态常量、字符串常量等）</p>
-<h2 id="程序执行过程"><a href="#程序执行过程" class="headerlink" title="程序执行过程"></a>程序执行过程</h2><p>[java 类]方法区（类相关信息：1.代码2.静态变量3.静态方法4.字符串常量 例：”名字”） —— 栈（main方法栈帧：局部变量 —— 构造器方法栈帧） —— 堆（对象：成员变量赋初值（int：0 String：null），成员方法）  </p>
-<h1 id="Java虚拟机JVM"><a href="#Java虚拟机JVM" class="headerlink" title="Java虚拟机JVM"></a>Java虚拟机JVM</h1><p>组成部分：1.类加载器子系统2.运行时数据区（内存结构）3.执行引擎<br>堆和方法区：所有线程共享的<br>栈、程序计数器和本地方法栈（native调底层其他语言）：独立的线程<br>GC<br>Java虚拟机调优：fullgc尽可能少执行，gc也少执行<br>垃圾收集<br>垃圾收集算法<br>持续更新</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/23/java内存/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.冒泡排序<br>原理：比较两个相邻的元素，将值大的元素交换至右端。<br>思路：依次比较相邻的两个数，将小数放在前面，大数放在后面。即在第一趟：首先比较第1个和第2个数，将小数放前，大数放后。然后比较第2个数和第3个数，将小数放前，大数放后，如此继续，直至比较最后两个数，将小数放前，大数放后。重复第一趟步骤，直至全部排序完成。<br>第一趟比较完成后，最后一个数一定是数组中最大的一个数，所以第二趟比较的时候最后一个数不参与比较；<br>第二趟比较完成后，倒数第二个数也一定是数组中第二大的数，所以第三趟比较的时候最后两个数不参与比较；<br>依次类推，每一趟比较次数-1；<br>双层for循环：外层：需要循环次数是数组的大小。<br>持续更新</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/22/排序算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-编程词汇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="编程词汇"><a href="#编程词汇" class="headerlink" title="编程词汇"></a>编程词汇</h2><p>1.万年历<br>Perpetual calendar<br>2.客户<br>Customer<br>3.修改<br>Modify<br>4.账户<br>Account<br>5.存款<br>Deposit<br>6.取款<br>Withdrawal<br>7.余额<br>Balance<br>8.注册<br>Registered<br>9.会员<br>Member<br>10.座机<br>Landline<br>11.判断<br>Judge<br>12.批发<br>Wholesale<br>13.品种<br>Strain<br>持续更新</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/20/编程词汇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-代码报错集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="代码报错汇总"><a href="#代码报错汇总" class="headerlink" title="代码报错汇总"></a>代码报错汇总</h2><p>1.java.lang.NumberFormatException: For input string: “1 “<br>异常产生处：String类型数字转int型时产生<br>异常解释：数字格式错误<br>异常产生原因：1后面有一个空格<br>异常解决方法：删除多余的空格<br>2.java.lang.NullPointerException<br>异常产生处：String类型使用.equals()方法时产生<br>异常解释：空指针异常<br>异常产生原因：String变量可能为空<br>异常解决方法：1.先判断是否可能为空，之后再比较；2.交换两者先后顺序<br>持续更新</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/代码报错集合/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>View层:页面显示</p>
-<h3 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h3><p>Controller层（Servlet）：接受view层请求，并分发给model层处理。     </p>
-<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>Model层：1.封装逻辑的模型-功能；2.封装数据的模型-实体类（对应数据库的表）；  </p>
-<h2 id="三层架构"><a href="#三层架构" class="headerlink" title="三层架构"></a>三层架构</h2><p>与MVC设计模式的目标一致：都是为了解耦合、提高代码复用；<br>区别：二者对项目理解的角度不同。<br>三层组成（从上到下）：  </p>
-<h3 id="表示层（USL：User-Show-Layer；View、视图层）："><a href="#表示层（USL：User-Show-Layer；View、视图层）：" class="headerlink" title="表示层（USL：User Show Layer；View、视图层）："></a>表示层（USL：User Show Layer；View、视图层）：</h3><p>1.表示前台代码：对应于MVC中的View；用于和用户交互、界面的显示。<br>【技术：jsp html js css jQuery等web前端技术】<br>【代码位置：WebContent】<br>2.表示后台代码：servlet：对应于MVC中的Controller；用于控制跳转、业务逻辑层。<br>【技术：servlet springMVC Struts2】<br>【代码位置：Servlet，位于XXX.servlet包】</p>
-<h3 id="业务逻辑层-BLL-Business-Logic-Layer；service层-："><a href="#业务逻辑层-BLL-Business-Logic-Layer；service层-：" class="headerlink" title="业务逻辑层(BLL:Business Logic Layer；service层)："></a>业务逻辑层(BLL:Business Logic Layer；service层)：</h3><p>1.接受表示层的请求和调用；<br>2.组装数据访问层：<br>逻辑，可拆<br>增 删 改 查<br>例如：删除：删除之前，先查。（组合 ）<br>【代码位置：XXX.service包,也有XXX.manager包，也有XXX.bll包】   </p>
-<h3 id="数据访问层-DAL-Data-Access-Layer；dao层-："><a href="#数据访问层-DAL-Data-Access-Layer；dao层-：" class="headerlink" title="数据访问层(DAL,Data Access Layer；dao层)："></a>数据访问层(DAL,Data Access Layer；dao层)：</h3><p>直接访问数据库操作：<br>原子性，不可拆<br>增 删 改 查<br>【代码位置：XXX.dao包】    </p>
-<h2 id="MVC与三层"><a href="#MVC与三层" class="headerlink" title="MVC与三层"></a>MVC与三层</h2><p>MVC————三层<br>V视图——————表示层（前台）<br>C控制器——————表示层（后台）<br>M模型（封装业务的JavaBean（功能））——————业务逻辑层（功能）<br>M模型（封装业务的JavaBean（功能））——————数据访问层（功能）<br>M模型（封装数据的JavaBean（实体类-表））——————实体类（用来传送数据）  </p>
-<h2 id="三层间的关系"><a href="#三层间的关系" class="headerlink" title="三层间的关系"></a>三层间的关系</h2><p>上层将请求传递给下层，下层处理后，返回给上层。<br>上层依赖于下层，依赖：代码的理解，就是持有成员变量。（现有数据库，才有dao层）  </p>
-<p>###Servlet<br>建议：一个Servlet处理一个功能，因此增删改查（查一个，查多个）需要有四（五）个Servlet。  </p>
-<h2 id="三层的优化"><a href="#三层的优化" class="headerlink" title="三层的优化"></a>三层的优化</h2><h3 id="1-加入接口"><a href="#1-加入接口" class="headerlink" title="1.加入接口"></a>1.加入接口</h3><p>建议面向接口开发：先接口——再实现类<br>接口与实现类的命名规范：<br>接口：interface. 起名 I实体类Service(IStudentService)；IStudnetDao<br>实现类：implements. 起名 实体类ServiceImpl(StudentServiceImpl)；StudentDaoImpl<br>接口所在的包：xxx.service; xx.dao<br>实现类所在的包：xxx.service.impl; xx.dao.impl<br>service:<br>dao:<br>接口 x = new 实现类();<br>IStudentDao studentDao = new StudentDaoImpl();  </p>
-<h3 id="2-DBUtil"><a href="#2-DBUtil" class="headerlink" title="2.DBUtil"></a>2.DBUtil</h3><p>通用的数据库帮助类 ，可以简化Dao层的代码量。<br>dao类中存在大量的冗余。<br>帮助类 一半建议写在 xxx.util包</p>
-<p>A类{<br> a(){<br> B.connection<br> }<br>} </p>
-<p>B类{<br> static Connection connection(现:静态全局变量)<br> b(){<br> Connection connection(原)<br> }<br>}  </p>
-<h3 id="方法重构"><a href="#方法重构" class="headerlink" title="方法重构"></a>方法重构</h3><p>将多个方法的共同代码提炼出来，单独写在一个方法中。  </p>
-<h3 id="web调试"><a href="#web调试" class="headerlink" title="web调试"></a>web调试</h3><p>与java调试只有启动方式不同。<br>jsp翻译成的java以及编译后的class文件，存在于tomcat中的work目录中。<br>时间2019/5/25 </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/15/MVC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mybatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>持续更新</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/14/mybatis/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><p>Java集合可分为Set、List、Queue、Map四种。<br>set：代表无序、不可重复（元素唯一）的集合；（无序指存储顺序和取出顺序不一致）<br>list：代表有序、可重复的集合；（有序指存储顺序和取出顺序一致）<br>map：代表具有映射关系的集合；<br>queue：代表一种队列集合；<br>Properties是一个双列集合； </p>
-<h2 id="数组与集合的区别"><a href="#数组与集合的区别" class="headerlink" title="数组与集合的区别"></a>数组与集合的区别</h2><p>1.数组的长度不可变；<br>2.数组不能存储具有映射关系的数据；<br>3.数组只能存储同一类型的元素，集合可以存储不同类型元素；<br>4.数组可以存储基本数据类型，也可以存储引用数据类型，但是集合只能存储引用类型（基本数据类型是分配在栈上的，而引用类型是分配在堆上）；<br>4.1基本数据类型：byte：Java中最小的数据类型，在内存中占8位(bit)，即1个字节，取值范围-128~127，默认值0；<br>short：短整型，在内存中占16位，即2个字节，取值范围-32768~32717，默认值0；<br>int：整型，用于存储整数，在内在中占32位，即4个字节，取值围-2147483648~2147483647，默认值0；<br>long：长整型，在内存中占64位，即8个字节-2^63~2^63-1，默认值0L；<br>float：浮点型，在内存中占32位，即4个字节，用于存储带小数点的数字（与double的区别在于float类型有效小数点只有6~7位），默认值0；<br>double：双精度浮点型，用于存储带有小数点的数字，在内存中占64位，即8个字节，默认值0；<br>char：字符型，用于存储单个字符，占16位，即2个字节，取值范围0~65535，默认值为空；<br>boolean：布尔类型，占1个字节，用于判断真或假（仅有两个值，即true、false），默认值false；<br>4.2引用数据类型：<br>数组<br>String：字符串型，用于存储一串字符  </p>
-<h2 id="访问不同集合中元素的方法"><a href="#访问不同集合中元素的方法" class="headerlink" title="访问不同集合中元素的方法"></a>访问不同集合中元素的方法</h2><p>1.set：根据元素本身来访问（因为把一个对象加入到Set集合时，Set无法记住添加这个元素的顺序，所以Set无法重复）；<br>2.list：可以直接通过元素的索引来访问；<br>3.map：可以根据每个元素的key来访问value；<br>4.Properties：没有泛型，键和值都是String </p>
-<h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><p>collection接口是Set、List、Queue接口的父接口；<br>Collection方法：<br>1.boolean add（Object o）：添加一个元素，成功返回true；<br>2.boolean addAll（Collection c）：把c集合中的所有元素添加到指定集合里；  </p>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态：指的是同一个方法调用，由于对象不同可能会有不同的行为。<br>1.多态是方法的多态，不是属性的多态（多态与属性无关）；<br>2.多态存在的三个必要条件：继承、方法重写、父类引用指向子类对象；<br>3.父类引用指向子类对象后，用该父类引用调用子类重写的方法，此时多态出现；  </p>
-<h2 id="转型"><a href="#转型" class="headerlink" title="转型"></a>转型</h2><h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h3><p>子类可以自动转为父类： Animal d1 = new Dog();  </p>
-<h3 id="向下转型"><a href="#向下转型" class="headerlink" title="向下转型"></a>向下转型</h3><p>再转回来，强制向下转型：Dog d2 =（Dog）d1；  </p>
-<h2 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h2><p>抽象类：给子类提供一个设计模板，让子类实现。<br>1.有抽象方法的类只能定义成抽象类；<br>2.抽象类不能实例化，即不能用new来实例化抽象类；<br>3.抽象类可以包含属性、方法、构造方法，但是构造方法不能用new来实例，只能用来被子类调用；<br>4.抽象类只能用来被继承；<br>5.抽象方法必须被子类实现；   </p>
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口：比抽象类还要更抽象，接口中的所有方法都是抽象方法。<br>1.接口中只能定义不变的东西：抽象方法、常量（全大写下划线分割）；（稳定public static final修饰）<br>2.接口中不存在私有；<br><code>3.java中的类是单继承，但是Java中的接口可以多继承</code>  </p>
-<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>自动装箱和自动拆箱：<br>Integer a = 1；//自动装箱：Integer a = Integer.valueOf(1);<br>int b = a;//自动拆箱：编译器会自动修改成：int b = a.intValue();  </p>
-<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>反射机制：再【运行状态】中；对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。<br>反射提供的功能：在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。<br>获取对象方式（反射入口）：类型class<br>1 class.forName(全类名);<br>2 类名.class;<br>3 对象.getClass();<br>获取方法： .getMethods();<br>获取的是公共的方法（1.本类以及父类、接口中的所有方法；2.符合访问修饰符规律）  </p>
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>instanceof是二元运算符，左边是对象，右边是类；当对象是右边类或子类所创建对象时，返回true；否则，返回false。<br>持续更新</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/09/Java集合/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="1-IOC（控制反转-DI：依赖注入）"><a href="#1-IOC（控制反转-DI：依赖注入）" class="headerlink" title="1.IOC（控制反转 DI：依赖注入）"></a>1.IOC（控制反转 DI：依赖注入）</h2><h3 id="1-1搭建环境"><a href="#1-1搭建环境" class="headerlink" title="1.1搭建环境"></a>1.1搭建环境</h3><p>下载jar包<br>必须的jar包（5个+1个）：<br>spring-aop.jar :开发AOP特性<br>spring-beans.jar ：处理bean<br>spring-context.jar ：处理上下文<br>spring-core.jar ：核心<br>spring-expression.jar ：Spring表达式 EL/jtsl<br>三方提供的日志jar：commons-logging.jar  </p>
-<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p>编写配置文件  </p>
-<h3 id="1-2开发Spring程序（IOC）"><a href="#1-2开发Spring程序（IOC）" class="headerlink" title="1.2开发Spring程序（IOC）"></a>1.2开发Spring程序（IOC）</h3><p>1.区别：原来：需要new对象；需要给对象属性赋值；<br>    //一般方式<br>    Student student = new Student();<br>    student.setStuNo(1);<br>    student.setStuName(“zs”);<br>    student.setStuAge(23);<br>    System.out.println(student);<br>现在：使用配置文件创建对象（springIOC容器）；使用配置文件给属性赋值；<br>    //Spring方式:spring上下文对象context<br>    ApplicationContext context = new ClassPathXmlApplicationContext  (“applicationContext.xml”);<br>    Student student = (Student)context.getBean(“student”);<br>    System.out.println(student);<br>spring帮new一个对象，并赋值。<br>2.new对象原来：创建对象非常零散，造成后期维护较为麻烦。<br>现在（简单工厂）：可以将new集中起来，方便后期维护。  </p>
-<h3 id="spring-IOC容器（什么都能放：超级工厂）"><a href="#spring-IOC容器（什么都能放：超级工厂）" class="headerlink" title="spring IOC容器（什么都能放：超级工厂）"></a>spring IOC容器（什么都能放：超级工厂）</h3><p>IOC：控制反转<br>反转的是：获取对象的方式<br>IOC改名为DI（依赖注入）：1.放到容器中；2.拿  </p>
-<h3 id="IOC容器赋值"><a href="#IOC容器赋值" class="headerlink" title="IOC容器赋值"></a>IOC容器赋值</h3><p>如果是简单类型（8个基本+String），使用value；<br>如果是对象类型，使用ref（id值），实现了对象与对象之间的依赖关系；<br>依赖注入底层是通过反射实现的。  </p>
-<h3 id="依赖注入3种方式"><a href="#依赖注入3种方式" class="headerlink" title="依赖注入3种方式"></a>依赖注入3种方式</h3><ol>
-<li>set方式的依赖注入；<br>&lt;property> </li>
-<li>构造器（构造方法）注入；<br>&lt;constructor-arg> 可以有索引index，也可以指定name，还可以类型type。  </li>
-<li>P命名空间<br>引入P命名空间，xmlns:p=”<a href="http://www.springframework.org/schema/p&quot;" target="_blank" rel="noopener">http://www.springframework.org/schema/p&quot;</a><br>&lt;p:简单类型=””>空格&lt;p:对象类型-ref=””>    </li>
-</ol>
-<p>注意：无论时String还是int/short/long，再赋值时都是value=”值”，因此建议此时配合name\type。  </p>
-<h3 id="注入各种集合数据类型："><a href="#注入各种集合数据类型：" class="headerlink" title="注入各种集合数据类型："></a>注入各种集合数据类型：</h3><p>array：<br><code>&lt;array&gt; &lt;value&gt;足球a&lt;/value&gt; &lt;value&gt;篮球a&lt;/value&gt; &lt;value&gt;乒乓球a&lt;/value&gt; &lt;/array&gt;</code><br>set：<br><code>&lt;set&gt; &lt;value&gt;足球s&lt;/value&gt; &lt;value&gt;篮球s&lt;/value&gt; &lt;value&gt;乒乓球s&lt;/value&gt; &lt;/set&gt;</code><br>list：<br><code>&lt;list&gt; &lt;value&gt;足球l&lt;/value&gt; &lt;value&gt;篮球l&lt;/value&gt; &lt;value&gt;乒乓球l&lt;/value&gt; &lt;/list&gt;</code><br>map：<br><code>&lt;map&gt; &lt;entry&gt; &lt;key&gt; &lt;value&gt;footballm&lt;/value&gt; &lt;/key&gt; &lt;value&gt;足球m&lt;/value&gt; &lt;/entry&gt; &lt;/map&gt;</code><br>properties：<br><code>&lt;props&gt; &lt;prop key=&quot;footballp&quot;&gt;足球p&lt;/prop&gt; &lt;prop key=&quot;basketballp&quot;&gt;篮球p&lt;/prop&gt; &lt;prop key=&quot;pingpongp&quot;&gt;乒乓球p&lt;/prop&gt; &lt;/props&gt;</code>    </p>
-<h3 id="value属性和value子标签的区别"><a href="#value属性和value子标签的区别" class="headerlink" title="value属性和value子标签的区别"></a>value属性和value子标签的区别</h3><p>value属性需要加双引号； value标签不需要双引号；<br>value属性没有type（构造方法注入才有）； value标签有type（需要写全类名：java.lang.String）；<br>特殊符号（&lt;或&amp;）：value属性需要使用（&lt; : &amp;lt）（&amp; : &amp;amp）； value标签同一，还可以：&lt;![CDATA][任意]&gt;；  </p>
-<h3 id="处理空值”-“和null"><a href="#处理空值”-“和null" class="headerlink" title="处理空值” “和null"></a>处理空值” “和null</h3><p>赋空值null：<code>&lt;null/&gt;</code>不需要再写value；<br>赋空值” “: 子标签：<code>&lt;value&gt;&lt;/value&gt;</code>;属性:value=””;  </p>
-<h3 id="IOC要定义bean，必须要有对象的无参构造方法"><a href="#IOC要定义bean，必须要有对象的无参构造方法" class="headerlink" title="IOC要定义bean，必须要有对象的无参构造方法"></a>IOC要定义bean，必须要有对象的无参构造方法</h3><h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>自动装配（前提：只适用于引用类型ref）；约定优于配置<br>autowire=”byName”（本质byId）<br>byName：其他bean的id值=该类的属性名，则自动装配;<br>还有byType:其他bean的类型（class）是否与该类的属性类型是否一致；<br>constructor:其他bean的类型（class）是否与该类的构造方法参数的类型一致；<br>全部默认自动装配，在头文件中设置 ：<code>default-autowire=&quot;byName&quot;</code> ，虽然可以减少代码量，但是会降低代码的可读性，不建议写太多；  </p>
-<h3 id="使用注解定义bean"><a href="#使用注解定义bean" class="headerlink" title="使用注解定义bean"></a>使用注解定义bean</h3><p>使用注解定义bean：通过注解的形式将bean以及相应的属性值放入IOC容器；<br>&lt;context:component-scan base-package=”com.hx.dao”&gt;<br>&lt;/context:component-scan&gt;<br>Spring在启动时，会根据base-package在该包中扫描所有类，查找这些类是否有注解，如果有就加入；   </p>
-<h3 id="注解范围"><a href="#注解范围" class="headerlink" title="注解范围"></a>注解范围</h3><p>@Component:范围很大；<br>@Repository(仓库):可以注解Dao层；<br>@Serviece:注解service层；<br>@Controller：注解控制层；  </p>
-<h3 id="使用注解实现事务（声明式事务）（事务增删改数据库）"><a href="#使用注解实现事务（声明式事务）（事务增删改数据库）" class="headerlink" title="使用注解实现事务（声明式事务）（事务增删改数据库）"></a>使用注解实现事务（声明式事务）（事务增删改数据库）</h3><p>导jar包： </p>
+        <h2 id="1-HTTP协议详解"><a href="#1-HTTP协议详解" class="headerlink" title="1.HTTP协议详解"></a>1.HTTP协议详解</h2><p>1.HTTP的概念和介绍<br>概念：超文本传输协议（Hyper Text Transfer Protocol）<br>作用：规范了浏览器和服务器的数据交互<br>特点：  </p>
 <ol>
-<li>jar包：spring-tx-4.3.9.RELEASE  </li>
-<li>驱动包：ojdbc.jar  </li>
-<li>链接池使用的数据源：commons-dbcp.jar  </li>
-<li>链接池：commons-pool.jar  </li>
-<li>spring-jdbc-4.3.9.RELEASE  </li>
-<li>aopalliance.jar<br>配置：  </li>
-<li>jdbc\mybatis\spring<br>持续更新</li>
+<li>简单快捷：客户向服务器请求数据时，只需要传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通讯速度很快。  </li>
+<li>灵活：HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type加以标记。  </li>
+<li>无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户端的应答h后，即断开连接。采用这种方式可以节省传输时间。  </li>
+<li>无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就比较快。  </li>
+<li>支持B/S模式。  </li>
+<li>HTTP1.1版本之后支持可持续连接     </li>
 </ol>
+<p>持续更新</p>
 
       
 
@@ -611,7 +242,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/05/Spring/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/18/Servlet/">展开全文 >></a>
         </p>
       
 
@@ -641,15 +272,12 @@
 
 
   
-    <article id="post-在开发安卓中遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JSP主页问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在开发安卓中遇到了一些问题"><a href="#在开发安卓中遇到了一些问题" class="headerlink" title="在开发安卓中遇到了一些问题"></a>在开发安卓中遇到了一些问题</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><h1 id="1-LitePal"><a href="#1-LitePal" class="headerlink" title="1.LitePal"></a>1.LitePal</h1><p>因为这个APP大部分是关于数据库的操作，所以使用了LitePal框架，也自己学习了有关知识。  </p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><h1 id="2-接口回调"><a href="#2-接口回调" class="headerlink" title="2.接口回调"></a>2.接口回调</h1><p>在使用RecyclerView时，想要点击跳转，是需要使用接口回调的，因为Intent跳转，是在当前Activity调转到下一个Activity。    </p>
-<h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h1 id="3-适配器"><a href="#3-适配器" class="headerlink" title="3.适配器"></a>3.适配器</h1><p>在开发中，使用了RecyclerView和ExpandTabView，它们都需要使用适配器，来进行显示。  </p>
-<h2 id="-3"><a href="#-3" class="headerlink" title=" "></a> </h2><p>时间2019/5/5</p>
+        <h2 id="遇到一个有关JSP主页问题解决了一下午和一晚上才解决"><a href="#遇到一个有关JSP主页问题解决了一下午和一晚上才解决" class="headerlink" title="遇到一个有关JSP主页问题解决了一下午和一晚上才解决"></a>遇到一个有关JSP主页问题解决了一下午和一晚上才解决</h2><h3 id="问题：一个JSP主页是由多个JSP页面组成的，都使用-lt-include-gt-导入，因为多个JSP需要从Servlet中取得数据。"><a href="#问题：一个JSP主页是由多个JSP页面组成的，都使用-lt-include-gt-导入，因为多个JSP需要从Servlet中取得数据。" class="headerlink" title="问题：一个JSP主页是由多个JSP页面组成的，都使用&lt;%@include %&gt;导入，因为多个JSP需要从Servlet中取得数据。"></a>问题：一个JSP主页是由多个JSP页面组成的，都使用&lt;%@include %&gt;导入，因为多个JSP需要从Servlet中取得数据。</h3><p>1.一开始使用每个页面都使用getrequestdispatcher进行请求不同Servlet，但是因为它们都在主页中，getrequestdispatcher多次请求会报错。<br>2.进行修改，开始整合到一个Servlet中，传入不同的参数，结果发现还是报错。<br>3.改变代码顺序，只使用一个getrequestdispatcher请求，发现还是不行。<br>4.最后，设置默认页为Servl，然后再往主页传值，最后发现执行成功。<br><strong>这个过程将近5个小时，中间一度想过要放弃，真的最后执行成功心中非常喜悦，感觉自己的付出都是值得的。通过这件事，我也明白了：1.坚持，再坚持一下，真的很重要；2.自己的基础不够扎实，对于请求转发的知识掌握不够，还需要加强。</strong><br>时间2019/7/15</p>
 
       
 
@@ -662,7 +290,461 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/05/在开发安卓中遇到的问题/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/15/JSP主页问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-redis缓存技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h3 id="1-NoSql"><a href="#1-NoSql" class="headerlink" title="1.NoSql"></a>1.NoSql</h3><p><strong>NoSQL</strong>泛指非关系型数据库，分四大类  </p>
+<ol>
+<li>键值（Key-Value）存储数据库：这一类数据库主要会使用导一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。如：Redis、Voldemont、Oracle BDB  </li>
+<li>列存储数据库：这部分数据库通常是用来应对分布式存储的海量数据。键仍然存在，但是它们的特点是指向了多个列。如：HRase、Riak  </li>
+<li>文档型数据库：该类型的数据结构模型是版本化的文档，半结构化的文档以特定的格式存储，比如JSON。文档型数据库可以看作是键值数据库的升级版，允许之间嵌套键值。而且文档型数据库比键值数据库的查询效率更高。如：CouchDB、MongoDB  </li>
+<li>图形（Graph）数据库：图形结构的数据库同其他行列以及刚性结构的SQL数据库不同，它是使用灵活的图形模型，并且能够扩展到多个服务器上。NoSQL数据库没有标准的查询语言（SQL），因此进行数据库查询需要制定数据模型。许多NoSQL数据库都由REST式的数据接口或者查询API。如：Neo4J、InfoGrid、Infinite Graph<br>非关系型数据库的特点：  </li>
+<li>数据模型比较简单；  </li>
+<li>需要灵活性更强的IT系统；  </li>
+<li>对数据库性能要求较高；    </li>
+<li>不需要高度的数据一致性（一致性）；  </li>
+<li>对于给定的key，比较容易映射复杂值的环境；  <h3 id="2-Redis"><a href="#2-Redis" class="headerlink" title="2.Redis"></a>2.Redis</h3>是以key-value形式存储的，  </li>
+</ol>
+<p>持续更新</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/12/redis缓存技术/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-导sql表示报错utf8mb4_0900_ai_ci" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="往数据库中导入sql时报错“1273-Unknown-collation-utf8mb4-0900-ai-ci"><a href="#往数据库中导入sql时报错“1273-Unknown-collation-utf8mb4-0900-ai-ci" class="headerlink" title="往数据库中导入sql时报错“1273 - Unknown collation: utf8mb4_0900_ai_ci"></a>往数据库中导入sql时报错“1273 - Unknown collation: <code>utf8mb4_0900_ai_ci</code></h2><h4 id="原因：导出sql文件的数据库和要导入数据库的版本不一致"><a href="#原因：导出sql文件的数据库和要导入数据库的版本不一致" class="headerlink" title="原因：导出sql文件的数据库和要导入数据库的版本不一致"></a>原因：导出sql文件的数据库和要导入数据库的版本不一致</h4><h4 id="解决方法：将sql文件中中的所有utf8mb4-0900-ai-ci替换成utf8-general-ci或utf8mb4-general-ci"><a href="#解决方法：将sql文件中中的所有utf8mb4-0900-ai-ci替换成utf8-general-ci或utf8mb4-general-ci" class="headerlink" title="解决方法：将sql文件中中的所有utf8mb4_0900_ai_ci替换成utf8_general_ci或utf8mb4_general_ci"></a>解决方法：将sql文件中中的所有<code>utf8mb4_0900_ai_ci</code>替换成<code>utf8_general_ci</code>或<code>utf8mb4_general_ci</code></h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/11/导sql表示报错utf8mb4_0900_ai_ci/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h3 id="1-Linux目录"><a href="#1-Linux目录" class="headerlink" title="1.Linux目录"></a>1.Linux目录</h3><ol>
+<li>/ ：表示根目录  </li>
+<li>~ ：表示/root</li>
+<li><strong>etc</strong> ：存放系统配置目录  </li>
+<li>home ：表示除了root以外所有用户默认在home下新建一个以用户名为文件夹名称的文件夹</li>
+<li><h1 id="：表示root用户；-：表示个人用户"><a href="#：表示root用户；-：表示个人用户" class="headerlink" title="：表示root用户；$：表示个人用户"></a>：表示root用户；$：表示个人用户</h1></li>
+<li>user ：所有用户安装的软件都放入到此文件夹中（压缩包放入到usr/local/tmp文件夹中）</li>
+</ol>
+<p>Linux路径（1.全路径：以/开头|2.相对路径：从当前资源一步一步寻找其他资源）    </p>
+<h3 id="2-常用命令"><a href="#2-常用命令" class="headerlink" title="2.常用命令"></a>2.常用命令</h3><ol>
+<li>pwd ：打印工作目录，当前所有文件夹  </li>
+<li>进入文件夹（1.cd .. ：向上一级跳转 | 2.cd 路径 ：进入指定文件夹）  </li>
+<li>mkdir ：新建空文件夹  </li>
+<li>ls ：平铺 | ll ：详细列表</li>
+<li>vi或vim编辑文件：<br>5.1. 只读-&gt;编辑 ：”i”或”insert”<br>5.2. 退出 ：编辑-&gt;只读（”Esc”）,：wq（保存退出），：q（不保存退出） </li>
+<li>touch ：创建空文件  </li>
+<li>cat ：查看文件全部内容  </li>
+<li>head -[n] 文件名 ：查看文件前n行内容（默认前10）  </li>
+<li>tail -[n] 文件名 ：查看文件后n行内容（默认后10） </li>
+<li><strong>tailf</strong> ：动态显示文件后n行内特，常用在显示tomcat日志文件中</li>
+<li>echo “内容” &gt;&gt; 文件名 ：向文件中添加一些内容</li>
+<li>ifconfig ：打印网卡信息（查看ip）  </li>
+<li>reboot ：重启  </li>
+<li>tar zxvf 文件名 ：解压文件</li>
+<li>cp <a href="复制文件夹">-r\</a> 原文件 新文件路径 ：复制文件  </li>
+<li>ctrl+c :中断  </li>
+<li>mv 原文件 新文件 ：剪切（具备重命名功能）</li>
+<li>rm <a href="-r 目录|-f 强制">-rf\</a> 文件名 ：删除  <h3 id="3-XShell5（客户端工具）"><a href="#3-XShell5（客户端工具）" class="headerlink" title="3.XShell5（客户端工具）"></a>3.XShell5（客户端工具）</h3></li>
+<li>Centos中默只之开启22端口，其他端口都被防火墙拦截<h3 id="4-Filezila"><a href="#4-Filezila" class="headerlink" title="4.Filezila"></a>4.Filezila</h3></li>
+<li>FTP协议（File Transfer Protocol）: 互联网中，计算机传输文件需要遵守的协议</li>
+<li>使用Filezila可以快速完成文件传输功能<h3 id="5-安装JDK"><a href="#5-安装JDK" class="headerlink" title="5.安装JDK"></a>5.安装JDK</h3></li>
+<li>把压缩包上传到服务器/sur/local/tmp</li>
+<li>解压压缩包 # tar zxvf 文件名（rpm2cpio xxx.rpm | cpio -idmv ）</li>
+<li>把压缩后文件复制到/usr/local/jdk7 # cp -r 文件名 /usr/local/jdk7</li>
+<li>配置环境变量，执行命令 # vim /etc/profile</li>
+<li>修改文件中内容：<br>#export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL<br>export JAVA_HOME=/usr/local/jdk7<br>export PATH=$JAVA_HOME/bin:$PATH<br>分割使用冒号<br>$变量名表示引用<br>export ：表示添加或修改变量  </li>
+<li>解析文件（或重启系统） # source /etc/profile<h3 id="6-Tomcat配置"><a href="#6-Tomcat配置" class="headerlink" title="6.Tomcat配置"></a>6.Tomcat配置</h3></li>
+<li>把tomcat压缩包上传到服务器</li>
+<li>解压tomcat # tar zxvf 压缩包名</li>
+<li>压缩后的文件夹复制到/usr/local/tomcat # cp -r apache-tomcat-7.0.68 /usr/local/tomcat</li>
+<li>配置环境变量<br>4.1.# vim /etc/profile<br>4.2.添加内容<br>export TOMCAT_HOME=/usr/local/tomcat<br>export CATALINA_HOME=/usr/local/tomcat  </li>
+<li>放行8080服务(由防火墙)<br>5.1.# vim /etc/sysconfig/iptable<br>5.2.复制22端口，改为8080。（8080:8090 表示从8080到8090都放行）<br>5.3.重启服务：# service iptable restart（start启动；stop停止；restart重启）  </li>
+<li>启动Tomcat，进入到tomcat/bin文件夹<br>6.1.直接启动 # ./startip.sh<br>6.2.启动并动态打印启动信息 # ./startup.sh     &amp; tailf /usr/local/tomcat/logs/catalina.out  </li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/08/Linux/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-计算机网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>交换机：<br>路由器：  </p>
+<h3 id="1-数据包和数据帧"><a href="#1-数据包和数据帧" class="headerlink" title="1.数据包和数据帧"></a>1.数据包和数据帧</h3><p>数据包：数据-源ip地址-目标ip地址<br>数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址<br>ip地址：决定了最终要去的地址<br>mac地址：路由下一跳<br>路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。  </p>
+<h3 id="2-OSI参考模型"><a href="#2-OSI参考模型" class="headerlink" title="2.OSI参考模型"></a>2.OSI参考模型</h3><p>应用层：所有能产生网络流量的程序<br>表示层：在传输之前是否进行加密或压缩处理;表示层提供文本压缩，数据加密与解密，语法选择，数据转换和格式转换服务<br>会话层：查木马 netstat-n<br>传输层：可靠传输、不可靠传输、流量控制<br>网络层：负责选择最佳路径、规划ip地址<br>数据链路层：帧的开始和结束、透明传输、差错校验<br>物理层：接口标准、电气标准、如何在物理链路上传输更快速度<br><strong>每一层都要为上一层提供服务</strong>  </p>
+<h3 id="OSI参考模型对网络排错指导"><a href="#OSI参考模型对网络排错指导" class="headerlink" title="OSI参考模型对网络排错指导"></a>OSI参考模型对网络排错指导</h3><p>1.物理层故障：查看连接状态、发生和接受的数据包<br>2.数据链路层故障：MAC冲突、ADSL欠费、网速没有协商一致、计算机连接到错误的VLAN<br>3.网络层故障：配置错误IP地址、子网掩码、配置错误的网关、路由器没有配置到达目标网络的路由<br>4.应用层故障：应用程序配置错误</p>
+<p>##3.TCP/IP协议和OSI参考模型<br>OSI参考模型——————————五层模型————TCP/IP协议栈<br>（应用层、表示层、会话层）———应用层—————HTTP、FTP、DNS<br>传输层—————————————传输层—————TCP/UDP<br>网络层—————————————网络层—————（ARP）、IP、（ICMP/IGMP）<br>数据链路层———————————数据链路层———（Ethernet）、ATM、Frame Relay<br>物理层—————————————网络层—————（Ethernet）、ATM、Frame Relay<br>网络接口层（链路层=物理层+数据链路层）   </p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p><strong>数据封装</strong><br>（应用层、表示层、会话层）———上层数据<br>传输层—————————————TCP头+（上层数据）-&gt;数据段或消息<br>网络层—————————————IP头+（TCP头+上层数据）-&gt;数据包<br>数据链路层———————————MAC头+（IP头+TCP头+上层数据）+FCS[差错校验]-&gt;数据帧<br>物理层—————————————Bit    </p>
+<p>持续更新</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/27/计算机网络/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据结构和算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><p>字符串匹配问题（字符串str1，字符串str2，判断str1中是否包含ste2？）——<strong>KMP算法</strong>：部分匹配表<br>汉诺塔问题——<strong>分治算法</strong><br>八皇后问题——<strong>回溯算法</strong>（92种）<br>马踏棋盘算法（骑士周游）——<strong>图的深度优化遍历算法（DFS）+贪心算法优化</strong><br>五子棋程序——<strong>稀疏数组</strong> （压缩）<br>约瑟夫问题（丢手帕问题）——<strong>单循环形链表</strong><br>修路问题——<strong>最小生成树（加权值）+普利姆算法</strong><br>最短路径问题——<strong>图+弗洛伊德算法</strong>     </p>
+<h2 id="线性结构和非线性结构"><a href="#线性结构和非线性结构" class="headerlink" title="线性结构和非线性结构"></a>线性结构和非线性结构</h2><p>线性结构（元素之间一对一线性对应）：1.顺序存储结构2.链式存储结构<br>包括：数组、队列、链表、和栈<br>非线性结构：包括：二维数组、多维数组、广义表、树结构、图结构    </p>
+<h3 id="1-稀疏数组-sparseArr"><a href="#1-稀疏数组-sparseArr" class="headerlink" title="1.稀疏数组[sparseArr]"></a>1.稀疏数组[sparseArr]</h3><p>当一个数组中大部分元素为0，或者为同一个数组时，可以使用稀疏数组来保存该数组。达到压缩的目的。<br>稀疏数组的处理方法：<br>1.记录数组一共有几行几列，有多少个不同的值<br>2.把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模。<br>数组中【行（row），列（col），值（value）】<br>3.第一行默认【行数、列数、值数】  </p>
+<h4 id="1-1二维数组转化为稀疏数组"><a href="#1-1二维数组转化为稀疏数组" class="headerlink" title="1.1二维数组转化为稀疏数组"></a>1.1二维数组转化为稀疏数组</h4><p>1.遍历原始的二位数组，得到有效数据的个数sum<br>2.根据sum就可以创建稀疏数组sparseArr int[sum+1][3]<br>3.将二维数组的有效数据存入到稀疏数组中</p>
+<h4 id="1-2稀疏数组转化为原始的二维数组"><a href="#1-2稀疏数组转化为原始的二维数组" class="headerlink" title="1.2稀疏数组转化为原始的二维数组"></a>1.2稀疏数组转化为原始的二维数组</h4><p>1.先读取稀疏数组的第一行，根据第一行的数据，创建原始的二维数组，比如chessArr2=int[11][11]<br>2.在读取稀疏数组后几行的数据，并赋值原始的二维数组即可  </p>
+<p>持续更新</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/26/数据结构和算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringMVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><h3 id="1-servlet"><a href="#1-servlet" class="headerlink" title="1.servlet"></a>1.servlet</h3><p>1.1.@WebServlet(“/“):过滤JSP页面（不拦截JSP页面，其他都拦截）    </p>
+<h2 id="1-SpringMVC中主要组件"><a href="#1-SpringMVC中主要组件" class="headerlink" title="1.SpringMVC中主要组件"></a>1.SpringMVC中主要组件</h2><p>1.1.DispactherServlet(前端控制器):接收所有请求（如果配置（/），则只不包含jsp）<br>1.2.HandlerMapping(控制映射器):判断请求格式的，解析请求格式，判断要执行哪个具体的方法<br>1.3.HandlerAdapter(控制适配器):负责调用具体的方法<br>1.4.ViewResovler(视图解析器):解析结果，准备跳转到具体的物理视图    </p>
+<p>持续更新</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/17/SpringMVC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTTP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><p>HTTP协议（HyperText Transfer Protocol，超文本传输协议）是因特网上应用最为广泛的一种网络传输协议。所有的WWW文件都必须遵守这个标准。<br>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。  </p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><h3 id="1-1HTTP-工作原理"><a href="#1-1HTTP-工作原理" class="headerlink" title="1.1HTTP 工作原理"></a>1.1HTTP 工作原理</h3><p>HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。<br>Web服务器有：Apache服务器，IIS服务器（Internet Information Services）等。<br>Web服务器根据接收到的请求后，向客户端发送响应信息。<br>HTTP默认端口号为80，但是你也可以改为8080或者其他端口。<br>三点注意事项：   </p>
+<ul>
+<li>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。   </li>
+<li>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。 </li>
+<li>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+</ul>
+<h2 id="2-消息结构"><a href="#2-消息结构" class="headerlink" title="2.消息结构"></a>2.消息结构</h2><p>HTTP是基于客户端/服务端（C/S）的架构模型，通过一个可靠的链接来交换信息，是一个无状态的请求/响应协议。<br>一个HTTP”客户端”是一个应用程序（Web浏览器或其他任何客户端），通过连接到服务器达到向服务器发送一个或多个HTTP的请求的目的。<br>一个HTTP”服务器”同样也是一个应用程序（通常是一个Web服务，如Apache Web服务器或IIS服务器等），通过接收客户端的请求并向客户端发送HTTP响应数据。<br>HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。<br>一旦建立连接后，数据消息就通过类似Internet邮件所使用的格式[RFC5322]和多用途Internet邮件扩展（MIME）[RFC2045]来传送。  </p>
+<h3 id="2-1客户端请求消息"><a href="#2-1客户端请求消息" class="headerlink" title="2.1客户端请求消息"></a>2.1客户端请求消息</h3><p>客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成。<br>请求行 【请求方法 空格 URL 空格 协议版本 回车符 换行符】<br>请求头部 【头部字段名 ： 值 回车符 换行符】<br>请求头部 【头部字段名 ： 值 回车符 换行符】<br>空行 【回车符 换行符】<br>请求数据 【】  </p>
+<h3 id="2-2服务器响应信息"><a href="#2-2服务器响应信息" class="headerlink" title="2.2服务器响应信息"></a>2.2服务器响应信息</h3><p>HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。<br>状态行 【HTTP/1.1 200 OK】<br>信息报头 【】<br>空行 【】<br>响应正文 【html】   </p>
+<h2 id="3-HTTP请求方法"><a href="#3-HTTP请求方法" class="headerlink" title="3.HTTP请求方法"></a>3.HTTP请求方法</h2><p>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。<br>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。  </p>
+<ul>
+<li>GET：请求指定的页面信息，并返回实体主体  </li>
+<li>HEAD：似于get请求，只不过返回的响应中没有具体的内容，用于获取报头    </li>
+<li>POST：向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改  </li>
+<li>PUT：从客户端向服务器传送的数据取代指定的文档的内容  </li>
+<li>DELETE：请求服务器删除指定的页面  </li>
+<li>CONNECT：HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器  </li>
+<li>OPTIONS：允许客户端查看服务器的性能  </li>
+<li>TRACE：回显服务器收到的请求，主要用于测试或诊断  </li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>get与post的区别：<br>get：以明文的方式通过URL提交数据，数据在URL中可以看到。提交的数据最多不超过2KB。安全性较低效率比post方式高。适合提交数据量不大，安全性不高的数据。比如：搜索、查询的功能。<br>post：将用户提交的信息封装在HTML HEADER内。适合提交数据量大，安全性高的用户信息。比如：注册、修改、上传等功能。<br>请求转发与请求重定向的区别：<br>请求转发：服务器行为，request.getRequestDispatcher().forward(req,resp);是一次请求，转发后请求对象会保存，地址栏的URL地址不会改变。<br>请求重定向：客户端行为，response.sendRedirect()，从本质上讲等同与两次请求，前一次的请求对象不会保存，地址栏的URL地址会改变。 </p>
+<h2 id="4-HTTP响应头文件"><a href="#4-HTTP响应头文件" class="headerlink" title="4.HTTP响应头文件"></a>4.HTTP响应头文件</h2><ul>
+<li>Allow：服务器支持哪些请求方法（如GET、POST等）  </li>
+<li>Content-Encoding：文档的编码（Encode）方法</li>
+<li>Content-Length：表示内容长度  </li>
+<li>Content-Type：表示后面的文档属于什么MIME类型  </li>
+<li>Date：当前的GMT时间</li>
+<li>Expires：应该在什么时候认为文档已经过期，从而不再缓存它</li>
+<li>Last-Modified：文档的最后改动时间</li>
+<li>Location：表示客户应当到哪里去提取文档</li>
+<li>Refresh：表示浏览器应该在多少时间之后刷新文档，以秒计</li>
+<li>Server：服务器名字</li>
+<li>Set-Cookie：设置和页面关联的Cookie</li>
+<li>WWW-Authenticate：客户应该在Authorization头中提供什么类型的授权信息</li>
+</ul>
+<h2 id="5-HTTP状态码"><a href="#5-HTTP状态码" class="headerlink" title="5.HTTP状态码"></a>5.HTTP状态码</h2><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。<br>常见的HTTP状态码：  </p>
+<ul>
+<li>200 - 请求成功</li>
+<li>301 - 资源（网页等）被永久转移到其它URL </li>
+<li>404 - 请求的资源（网页等）不存在</li>
+<li>500 - 内部服务器错误   </li>
+</ul>
+<p>HTTP状态码分类： </p>
+<ul>
+<li>1**：信息，服务器收到请求，需要请求者继续执行操作</li>
+<li>2**：成功，操作被成功接收并处理</li>
+<li>3**：重定向，需要进一步的操作以完成请求</li>
+<li>4**：客户端错误，请求包含语法错误或无法完成请求</li>
+<li>5**：服务器错误，服务器在处理请求的过程中发生了错误</li>
+</ul>
+<p>时间2019/6/16</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/16/HTTP/">展开全文 >></a>
         </p>
       
 
@@ -694,7 +776,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

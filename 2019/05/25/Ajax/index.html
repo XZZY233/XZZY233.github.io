@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的第一篇博客  经历了一天的学习，自己建立了自己的博客，并学习了markdown。  特别感谢一个人子木雨路，爱你。时间2019/2/27">
+  <meta name="description" content="Ajax（异步刷新）js和xml组合全局刷新：请求转发和重定向异步刷新（局部刷新）：改那里，那里刷新   实现1.js依赖于对象：XMLHttpRequest对象XMLHttpRequest对象的方法：open(方法名[提交方式get/post],服务器地址,true[是否异步形式]):与服务端建立连接setRequestHeader(header,value):请求头信息(key-value)(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/2019/02/27/blog1/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/25/Ajax/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
-<meta property="og:description" content="我的第一篇博客  经历了一天的学习，自己建立了自己的博客，并学习了markdown。  特别感谢一个人子木雨路，爱你。时间2019/2/27">
+<meta property="og:description" content="Ajax（异步刷新）js和xml组合全局刷新：请求转发和重定向异步刷新（局部刷新）：改那里，那里刷新   实现1.js依赖于对象：XMLHttpRequest对象XMLHttpRequest对象的方法：open(方法名[提交方式get/post],服务器地址,true[是否异步形式]):与服务端建立连接setRequestHeader(header,value):请求头信息(key-value)(">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-27T11:27:19.306Z">
+<meta property="og:updated_time" content="2019-07-26T09:54:29.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
-<meta name="twitter:description" content="我的第一篇博客  经历了一天的学习，自己建立了自己的博客，并学习了markdown。  特别感谢一个人子木雨路，爱你。时间2019/2/27">
+<meta name="twitter:description" content="Ajax（异步刷新）js和xml组合全局刷新：请求转发和重定向异步刷新（局部刷新）：改那里，那里刷新   实现1.js依赖于对象：XMLHttpRequest对象XMLHttpRequest对象的方法：open(方法名[提交方式get/post],服务器地址,true[是否异步形式]):与服务端建立连接setRequestHeader(header,value):请求头信息(key-value)(">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -154,16 +154,25 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-blog1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Ajax" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>我的第一篇博客</strong></p>
-<hr>
-<p>经历了一天的学习，自己建立了自己的博客，并学习了markdown。</p>
-<hr>
-<p>特别感谢一个人子木雨路，爱你。<br>时间2019/2/27</p>
+        <h1 id="Ajax（异步刷新）"><a href="#Ajax（异步刷新）" class="headerlink" title="Ajax（异步刷新）"></a>Ajax（异步刷新）</h1><p>js和xml组合<br>全局刷新：请求转发和重定向<br>异步刷新（局部刷新）：改那里，那里刷新  </p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="1-js"><a href="#1-js" class="headerlink" title="1.js"></a>1.js</h3><p>依赖于对象：XMLHttpRequest对象<br>XMLHttpRequest对象的方法：<br>open(方法名[提交方式get/post],服务器地址,true[是否异步形式]):与服务端建立连接<br>setRequestHeader(header,value):请求头信息(key-value)<br>(1)get:不需要设置此方法<br>(2)post:需要设置<br>a.如果请求元素中包含了文件上传：<br>setRequestHeader(“Content-Type”,”multiparty/form-data”)<br>b.不包含文件上传<br>setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)<br>send():{get:send(null)|post:send(参数值)[k=v]}<br>XMLHttpRequest对象的属性：<br>readystate:请求状态<br>0 表示XMLHttpRequest对象没有初始化<br>1 表示XMLHttpRequest对象开始发送请求，已经执行了open()方法并完成了相关资源的准备<br>2 表示XMLHttpRequest对象已经将请求发送完毕，已经执行了send()方法来发送请求，但是还没有收到响应<br>3 表示XMLHttpRequest对象开始读取响应信息，已经接收到响应的头部信息，但是还没有将响应体接受完毕<br><strong>4 表示XMLHttpRequest对象将响应信息全部读取完毕，代表请求完毕</strong><br>state:响应状态<br><strong>200：服务器正常响应</strong><br>400：无法找到请求的资源<br>403：没有访问的权限<br>404：访问的资源不存在<br>500：服务器内部错误，很可能是服务器代码有错<br>onreadyStatechange:回调函数<br>responseText:响应格式为String<br>responseXML:响应格式为XML  </p>
+<h3 id="2-jQuery（推荐）"><a href="#2-jQuery（推荐）" class="headerlink" title="2.jQuery（推荐）"></a>2.jQuery（推荐）</h3><p>$.ajax({<br>url:服务器地址，<br>请求方式：get/post,<br>data:请求数据,<br>success.function(result,testStatus){  </p>
+<p>},<br>error:function(xhr,errorMessage,e){</p>
+<p>}<br>});     </p>
+<p>$.get(<br>服务器地址,<br>请求数据,<br>function(result){</p>
+<p>},<br>预期返回值类型(string\xml)<br>);</p>
+<p>$.post(<br>服务器地址,<br>请求数据,<br>function(result){</p>
+<p>},<br>预期返回值类型(string\xml)[“xml”|”json”|”text”]<br>);   </p>
+<p>(左边：jquery选择器) $(xxx).load(<br>服务器地址,<br>请求数据,    </p>
+<p>);<br>//load:将服务器的返回值，直接加载到$(xxx)所选择的元素中  </p>
+<p>$.getJSON();   </p>
+<h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><p>对象：<br>var student = {“name”:”zs”,”age”:”23”};<br>alert(student.name + “-“ + student.age);<br>数组：<br>var students = [<br>{“name”:”zs”,”age”:”23”},<br>{“name”:”ls”,”age”:”24”},<br>{“name”:”ww”,”age”:”25”},<br>];<br>alert(students[1].name + “-“ + students[1].age);   </p>
+<p>持续更新</p>
 
       
 
@@ -243,7 +252,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/27/blog1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/25/Ajax/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -257,7 +266,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/10/markdown语法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/25/JSP防止乱码/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -266,6 +275,11 @@
       </div>
     </a>
   
+  
+    <a href="/2019/05/24/设计模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
