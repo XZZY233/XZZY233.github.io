@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="XZZY233 BLOG">
 <meta property="og:description" content="Redis1.NoSqlNoSQL泛指非关系型数据库，分四大类    键值（Key-Value）存储数据库：这一类数据库主要会使用导一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。如：Redis、Voldemont、Oracle BDB   列存储数据库：这部分数据库通常是用来应对分布式存储的海量数据。键仍然存在，但是它们的特点是指向了多个列。如：HRase、Riak   文档型数据库">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-26T09:58:15.467Z">
+<meta property="og:updated_time" content="2019-08-24T09:46:12.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
 <meta name="twitter:description" content="Redis1.NoSqlNoSQL泛指非关系型数据库，分四大类    键值（Key-Value）存储数据库：这一类数据库主要会使用导一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。如：Redis、Voldemont、Oracle BDB   列存储数据库：这部分数据库通常是用来应对分布式存储的海量数据。键仍然存在，但是它们的特点是指向了多个列。如：HRase、Riak   文档型数据库">
@@ -159,7 +159,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h3 id="1-NoSql"><a href="#1-NoSql" class="headerlink" title="1.NoSql"></a>1.NoSql</h3><p><strong>NoSQL</strong>泛指非关系型数据库，分四大类  </p>
+        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="1-NoSql"><a href="#1-NoSql" class="headerlink" title="1.NoSql"></a>1.NoSql</h2><p><strong>NoSQL</strong>泛指非关系型数据库，分四大类  </p>
 <ol>
 <li>键值（Key-Value）存储数据库：这一类数据库主要会使用导一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。如：Redis、Voldemont、Oracle BDB  </li>
 <li>列存储数据库：这部分数据库通常是用来应对分布式存储的海量数据。键仍然存在，但是它们的特点是指向了多个列。如：HRase、Riak  </li>
@@ -169,8 +169,14 @@
 <li>需要灵活性更强的IT系统；  </li>
 <li>对数据库性能要求较高；    </li>
 <li>不需要高度的数据一致性（一致性）；  </li>
-<li>对于给定的key，比较容易映射复杂值的环境；  <h3 id="2-Redis"><a href="#2-Redis" class="headerlink" title="2.Redis"></a>2.Redis</h3>是以key-value形式存储的，  </li>
+<li>对于给定的key，比较容易映射复杂值的环境；  <h2 id="2-Redis"><a href="#2-Redis" class="headerlink" title="2.Redis"></a>2.Redis</h2>Redis是基于内存，常用作于缓存的一种技术，并且Redis存储的方式是以key-value的形式。  <h3 id="2-1-Redis和Map的区别："><a href="#2-1-Redis和Map的区别：" class="headerlink" title="2.1.Redis和Map的区别："></a>2.1.Redis和Map的区别：</h3></li>
 </ol>
+<ul>
+<li>Java实现的Map是本地缓存，如果有多台实例（机器）的话，每个实例都需要各自保存一份缓存，缓存不具有一致性  </li>
+<li>Redis实现的是分布式缓存，如果有多台实例（机器）的话，每个实例都共享一份缓存，缓存具有一致性。  </li>
+<li>Java实现的Map不是专业做缓存的，JVM内存太大容易挂掉的。一般用做于容器来存储临时数据，缓存的数据随着JVM销毁而结束。Map所存储的数据结构，缓存过期机制等等是需要自己手写的</li>
+<li>Redis是专业做缓存的，可以用几十个G内存来做缓存。可以将缓存数据保存在硬盘中，Redis重启了之后可以将其恢复。原生提供丰富的数据结构、缓存过期机制等等简单好用的功能。<h3 id="2-2-Redis的数据结构"><a href="#2-2-Redis的数据结构" class="headerlink" title="2.2.Redis的数据结构"></a>2.2.Redis的数据结构</h3>Redis中的key一定是字符串，value可以是string、list、hash、set、sortset这几种常用的。<br><strong>注意</strong>：Redis并没有直接使用这些数据结构来实现key-value数据库，而是基于这些数据结构创建了一个对象系统。  </li>
+</ul>
 <p>持续更新</p>
 
       

@@ -8,17 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计算机网络交换机：路由器：   1.数据包和数据帧数据包：数据-源ip地址-目标ip地址数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址ip地址：决定了最终要去的地址mac地址：路由下一跳路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。   2.OSI参考模型应用层：所有能产生网络流量的程序表示层：在传输之前是否进行加密或压缩处理;表示">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/2019/06/27/计算机网络/index.html">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
-<meta property="og:description" content="计算机网络交换机：路由器：   1.数据包和数据帧数据包：数据-源ip地址-目标ip地址数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址ip地址：决定了最终要去的地址mac地址：路由下一跳路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。   2.OSI参考模型应用层：所有能产生网络流量的程序表示层：在传输之前是否进行加密或压缩处理;表示">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-16T04:37:17.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
-<meta name="twitter:description" content="计算机网络交换机：路由器：   1.数据包和数据帧数据包：数据-源ip地址-目标ip地址数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址ip地址：决定了最终要去的地址mac地址：路由下一跳路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。   2.OSI参考模型应用层：所有能产生网络流量的程序表示层：在传输之前是否进行加密或压缩处理;表示">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -154,51 +150,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-JSP九大内置对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>交换机：<br>路由器：  </p>
-<h3 id="1-数据包和数据帧"><a href="#1-数据包和数据帧" class="headerlink" title="1.数据包和数据帧"></a>1.数据包和数据帧</h3><p>数据包：数据-源ip地址-目标ip地址<br>数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址<br>ip地址：决定了最终要去的地址<br>mac地址：路由下一跳<br>路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。  </p>
-<h3 id="2-OSI参考模型"><a href="#2-OSI参考模型" class="headerlink" title="2.OSI参考模型"></a>2.OSI参考模型</h3><p>应用层：所有能产生网络流量的程序<br>表示层：在传输之前是否进行加密或压缩处理;表示层提供文本压缩，数据加密与解密，语法选择，数据转换和格式转换服务<br>会话层：查木马 netstat-n<br>传输层：可靠传输、不可靠传输、流量控制<br>网络层：负责选择最佳路径、规划ip地址<br>数据链路层：帧的开始和结束、透明传输、差错校验<br>物理层：接口标准、电气标准、如何在物理链路上传输更快速度<br><strong>每一层都要为上一层提供服务</strong>  </p>
-<h3 id="OSI参考模型对网络排错指导"><a href="#OSI参考模型对网络排错指导" class="headerlink" title="OSI参考模型对网络排错指导"></a>OSI参考模型对网络排错指导</h3><p>1.物理层故障：查看连接状态、发生和接受的数据包<br>2.数据链路层故障：MAC冲突、ADSL欠费、网速没有协商一致、计算机连接到错误的VLAN<br>3.网络层故障：配置错误IP地址、子网掩码、配置错误的网关、路由器没有配置到达目标网络的路由<br>4.应用层故障：应用程序配置错误</p>
-<p>##3.TCP/IP协议和OSI参考模型<br>OSI参考模型——————————五层模型————TCP/IP协议栈<br>（应用层、表示层、会话层）———应用层—————HTTP、FTP、DNS<br>传输层—————————————传输层—————TCP/UDP<br>网络层—————————————网络层—————（ARP）、IP、（ICMP/IGMP）<br>数据链路层———————————数据链路层———（Ethernet）、ATM、Frame Relay<br>物理层—————————————物理层—————（Ethernet）、ATM、Frame Relay<br>网络接口层（链路层=物理层+数据链路层）   </p>
-<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p><strong>数据封装</strong><br>（应用层、表示层、会话层）———上层数据<br>传输层—————————————TCP头+（上层数据）-&gt;数据段或消息<br>网络层—————————————IP头+（TCP头+上层数据）-&gt;数据包<br>数据链路层———————————MAC头+（IP头+TCP头+上层数据）+FCS[差错校验]-&gt;数据帧<br>物理层—————————————Bit    </p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>HTTP（超文本传输协议）是应用层上的一种户端/服务端模型的通信协议,它由请求和响应构成，且是无状态的。<br><strong>协议</strong>：协议规定了通信双方必须遵循的数据传输格式，这样通信双方按照约定的格式才能准确的通信。<br><strong>无状态</strong>：无状态是指两次连接通信之间是没有任何关系的，每次都是一个新的连接，服务端不会记录前后的请求信息。  </p>
-<h2 id="2-URL构成"><a href="#2-URL构成" class="headerlink" title="2.URL构成"></a>2.URL构成</h2><p><strong><a href="http://www.aspxfans.com:8080/news/index.aspboard?ID=5&amp;ID=24618&amp;page=1#name" target="_blank" rel="noopener">http://www.aspxfans.com:8080/news/index.aspboard?ID=5&amp;ID=24618&amp;page=1#name</a></strong>  </p>
-<ol>
-<li>协议</li>
-<li>主机（域名）</li>
-<li>端口</li>
-<li>路径</li>
-<li>参数  <h2 id="3-协议内容"><a href="#3-协议内容" class="headerlink" title="3.协议内容"></a>3.协议内容</h2><h3 id="请求（Request）"><a href="#请求（Request）" class="headerlink" title="请求（Request）"></a>请求（Request）</h3>客户端发送一个HTTP请求到服务端的格式：  </li>
-</ol>
-<h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h1><p>持续更新</p>
+        <h1 id="JSP九大内置对象"><a href="#JSP九大内置对象" class="headerlink" title="JSP九大内置对象"></a>JSP九大内置对象</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><h1 id="1-out"><a href="#1-out" class="headerlink" title="1.out"></a>1.out</h1><p>输出对象，向客户端输出内容</p>
+<h1 id="2-pageContext"><a href="#2-pageContext" class="headerlink" title="2.pageContext"></a>2.pageContext</h1><p>JSP页面容器</p>
+<h1 id="3-request"><a href="#3-request" class="headerlink" title="3.request"></a>3.request</h1><p>请求对象，存储客户端向服务端发送的请求信息<br>request的常见方法：<br>String getParameter(String name); 根据请求的字段名key，返回字段值value<br>String[] getParameterValues(String name); 根据请求的字段名key，返回多个字段值value （checkbox）<br>void setCharacterEncoding(“编码格式UTF-8”) ; 设置请求编码<br>getRequsetDispatcher(“B.jsp”).forward(requset,response); 请求转发 A -&gt; B 可以获取到数据，并且地址栏没有改变（仍然在转发前地址）响应一次  服务端内部跳转<br>ServerContext getServerContext(); 获取项目的ServerContext<br>request只有在同一次请求中才有效     </p>
+<h1 id="4-reponse"><a href="#4-reponse" class="headerlink" title="4.reponse"></a>4.reponse</h1><p>响应对象<br>reponse常见方法：<br>void addCookie(Cookie cookie); 服务端向客户端增加一个cookie对象<br>void sendRedirect(String location) throws IOException; 页面跳转的一种方式，重定向   但是数据会丢失，地址栏会改变  响应两次<br>void setContentType(String type); 设置服务端响应编码       </p>
+<h1 id="5-session-服务端"><a href="#5-session-服务端" class="headerlink" title="5.session(服务端)"></a>5.session(服务端)</h1><p>Cookie（客户端，不是内部对象） 需要new  ：服务端产生，再发送给客户端保存。相当于本地缓存 作用：提高访问服务器的效率，但是安全性较差。<br>但是，服务端会自动生产一个name=JSESSIONID（服务端自动new一个）的cookie并返回给客户端<br>Cookie:key=value<br>javax.servlet.http.Cookie类<br>方法：<br>public Cookie(String key,String value)<br>String getName()<br>String getValue()<br>void setMaxAge(int expiry); 设置最大有效期，单位秒<br>服务端发送Cookie的过程：<br>response.addCookie(Cookie cookie);<br>页面跳转（转发、重定向）<br>客户端获取Cookie：<br>request.getCookie();//注意一次要全部都拿到，之后再遍历取其中需要的Cookie<br>一般Cookie只保存英文和数字，不使用中文  </p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><p>session：一次会话  浏览器的开始到关闭；购物从开始浏览、付款、结束。 开始——结束<br>session机制：客户端第一次请求服务端时，服务端会产生一个session对象（用于保存该客户的信息）；<br>并且每一个session都会有一个唯一的sessionID（用于区别其他session）；<br>服务端又会产生一个cookie，并且该cookie的name=JSESSIONID，value=服务端sessionID的值；<br>然后服务端会在响应客户端的同时将该cookie发送给客户端，至此客户端就有了一个cookie（JSESSIONID）；<br>因此，客户端的cookie就可以和服务端的session一一对应（JSESSIONID-session）<br>客户端第二/n次请求服务端时：服务端会先用客户端cookie中的JSESSIONID 去服务端的session中匹配sessionid；<br>session的机制：session存储在服务端；session是在同一个用户（客户）请求时共享；<br>session的使用（属性和方法）：<br>session方法：<br>String getId();获取sessionId<br>boolean isNew();判断是不是第一次访问<br>void invalidate();使session失效（退出、注销）<br>void setAttribute();<br>Object getAttribute();<br>void setMaxInactiveInterval(秒);设置最大有效非活动时间<br>int getMaxInactiveInterval(秒);查看当前最大有效非活动时间<br>cookie和session的区别：<br>保存的位置：session(服务端) cookie(客户端)<br>安全性：session(较安全) cookie(较不安全)<br>保存的内容：session(Object) cookie(String)<br>客户端在第一次请求服务端时，如果服务端发现此请求没有JSESSIONID，则会创建一个拥有name=JSESSIONID的cookie并返回给客户端 </p>
+<h1 id="6-application"><a href="#6-application" class="headerlink" title="6.application"></a>6.application</h1><p>全局变量<br>String getContextPath() 获取虚拟路径<br>String getRealPath(String name) 绝对路径（虚拟路径相对的绝对路径）  </p>
+<h1 id="7-config"><a href="#7-config" class="headerlink" title="7.config"></a>7.config</h1><p>配置对象（服务器配置信息）</p>
+<h1 id="8-page"><a href="#8-page" class="headerlink" title="8.page"></a>8.page</h1><p>当前JSP页面对象（相当于Java中的this）</p>
+<h1 id="9-exception"><a href="#9-exception" class="headerlink" title="9.exception"></a>9.exception</h1><p>异常对象  </p>
+<h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h1 id="JSP四大范围对象（从小到大）"><a href="#JSP四大范围对象（从小到大）" class="headerlink" title="JSP四大范围对象（从小到大）"></a>JSP四大范围对象（从小到大）</h1><p>1.pageContext（也称page对象,但不是九大内置对象中的page） 范围：当前页面有效，跳转后无效<br>2.request 范围：同一次请求有效，其他请求无效（请求转发有效，重定向无效）<br>3.session 范围：同一次会话有效（无论怎么跳转都有效，关闭或者切换浏览器会无效）<br>4.application 范围：全局有效（整个项目有效，切换浏览器仍有效，关闭服务或其他项目则无效）（补充JNDI：关闭服务或其他项目共享也有效）  </p>
+<h3 id="以上4个对象共有方法"><a href="#以上4个对象共有方法" class="headerlink" title="以上4个对象共有方法"></a>以上4个对象共有方法</h3><p>Object getAttribute(String name):根据属性名，获取属性值<br>void setAtribute(String name,Object obj):设置属性值（新增和修改，如果不存在则新建一个，如果存在则修改）<br>void removeAttribute(String name):根据属性名，删除对象<br>在使用时尽量使用范围小的。因为范围大的对象性能也大<br>时间2019/4/7  </p>
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -207,84 +180,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/23/JSP九大内置对象/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/27/计算机网络/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/07/08/Linux/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/06/26/数据结构和算法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -304,14 +209,147 @@
 
 
 
-  
-  
-  
 
   
+    <article id="post-kali不能安装软件解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="今天遇到了一个问题花费了自己将近一天的时间，找了许多资料，现在终于解决了，感觉很不容易。"><a href="#今天遇到了一个问题花费了自己将近一天的时间，找了许多资料，现在终于解决了，感觉很不容易。" class="headerlink" title="今天遇到了一个问题花费了自己将近一天的时间，找了许多资料，现在终于解决了，感觉很不容易。"></a>今天遇到了一个问题花费了自己将近一天的时间，找了许多资料，现在终于解决了，感觉很不容易。</h2><p>问题是这样的：当我下载好kali系统以后遇到了一些问题：<br>1.因为我是装在虚拟机中的，但是发现不能与外面复制内容和文件<br>解决方法：安装vmware tools<br>2.当我使用 apt-get 下载安装时会报错，报错内容时无法定位软件包<br>解决方法：需要自己手动配置源，并且有些源还不能用，我现在解决使用的是kali-rolling。<br>时间2019/3/16</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/16/kali不能安装软件解决方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
+    <article id="post-markdown语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。"><a href="#Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。" class="headerlink" title="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。"></a>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</h1><hr>
+<h3 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h3><h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h2><p>在每一行最开始插入#就可以实现标题效果 1-6级<br>例如  </p>
+<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><hr>
+<h2 id="2-文本样式"><a href="#2-文本样式" class="headerlink" title="2.文本样式"></a>2.文本样式</h2><p>2.1 链接 [Title](URL)<br>例如 我的博客网址  <a href="https://xzzy233.github.io/" target="_blank" rel="noopener">https://xzzy233.github.io/</a><br>2.2 斜体 *斜体<em><br>例如 </em>斜体<em><br>2.3 粗体 \</em>*粗体<strong><br>例如 </strong>粗体<strong><br>2.3 粗斜体 ***粗斜体*</strong><br>例如 <strong><em>粗斜体</em></strong><br>2.4 细分割线 ##<br>例如   </p>
+<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p>2.5 粗分割线 ***<br>例如   </p>
+<hr>
+<h2 id="3-转义"><a href="#3-转义" class="headerlink" title="3.转义"></a>3.转义</h2><p>在#或*之前加\就可以实现转义</p>
+<hr>
+<h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4.列表"></a>4.列表</h2><p>4.1 有序列表<br>#空格列表名<br>1.空格 内容<br>例如  </p>
+<h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><ol>
+<li>C</li>
+<li>JAVA</li>
+<li>PHP</li>
+</ol>
+<p>4.2 无序列表<br>#空格列表名<br>-空格 内容<br>例如</p>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ul>
+<li>Windows</li>
+<li>Linux   </li>
+</ul>
+<hr>
+<h2 id="5-代码块"><a href="#5-代码块" class="headerlink" title="5.代码块"></a>5.代码块</h2><p>`代码`<br>例如<br><code>hello world</code>  </p>
+<hr>
+<h2 id="6-插入图片"><a href="#6-插入图片" class="headerlink" title="6.插入图片"></a>6.插入图片</h2><p>类似于链接前面加！<br>本地图片./名称.jpg<br>例如<br>我的博客网址二维码<br><img src="/2019/03/10/markdown语法/./img/picture.png" alt="picture">  </p>
+<hr>
+<h2 id="7-表格"><a href="#7-表格" class="headerlink" title="7.表格"></a>7.表格</h2><p>\:–:|:–:<br>例如  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">表头一</th>
+<th style="text-align:center">表头二</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">一</td>
+<td style="text-align:center">二</td>
+</tr>
+</tbody>
+</table>
+<p>时间2019/3/10</p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/10/markdown语法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
   
 
 
@@ -334,8 +372,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

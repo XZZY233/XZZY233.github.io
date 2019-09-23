@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计算机网络交换机：路由器：   1.数据包和数据帧数据包：数据-源ip地址-目标ip地址数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址ip地址：决定了最终要去的地址mac地址：路由下一跳路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。   2.OSI参考模型应用层：所有能产生网络流量的程序表示层：在传输之前是否进行加密或压缩处理;表示">
+  <meta name="description" content="MySQl一.索引B+ Tree原理1.数据结构B Tree指的是Balance Tree，也就是平衡树。平衡树是一颗查找树，并且所有叶子节点位于同一层。B+ Tree是基于B Tree和叶子节点顺序访问指针进行实现，它具有B Tree的平衡性，并且通过顺序访问指针来提高区间查询的性能。在B+ Tree中，一个节点中的key从左到右非递减排列，如果某个指针的左右相邻key分别是keyi和keyi+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/2019/06/27/计算机网络/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/MySQL/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
-<meta property="og:description" content="计算机网络交换机：路由器：   1.数据包和数据帧数据包：数据-源ip地址-目标ip地址数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址ip地址：决定了最终要去的地址mac地址：路由下一跳路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。   2.OSI参考模型应用层：所有能产生网络流量的程序表示层：在传输之前是否进行加密或压缩处理;表示">
+<meta property="og:description" content="MySQl一.索引B+ Tree原理1.数据结构B Tree指的是Balance Tree，也就是平衡树。平衡树是一颗查找树，并且所有叶子节点位于同一层。B+ Tree是基于B Tree和叶子节点顺序访问指针进行实现，它具有B Tree的平衡性，并且通过顺序访问指针来提高区间查询的性能。在B+ Tree中，一个节点中的key从左到右非递减排列，如果某个指针的左右相邻key分别是keyi和keyi+">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-16T04:37:17.317Z">
+<meta property="og:updated_time" content="2019-09-17T01:20:09.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
-<meta name="twitter:description" content="计算机网络交换机：路由器：   1.数据包和数据帧数据包：数据-源ip地址-目标ip地址数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址ip地址：决定了最终要去的地址mac地址：路由下一跳路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。   2.OSI参考模型应用层：所有能产生网络流量的程序表示层：在传输之前是否进行加密或压缩处理;表示">
+<meta name="twitter:description" content="MySQl一.索引B+ Tree原理1.数据结构B Tree指的是Balance Tree，也就是平衡树。平衡树是一颗查找树，并且所有叶子节点位于同一层。B+ Tree是基于B Tree和叶子节点顺序访问指针进行实现，它具有B Tree的平衡性，并且通过顺序访问指针来提高区间查询的性能。在B+ Tree中，一个节点中的key从左到右非递减排列，如果某个指针的左右相邻key分别是keyi和keyi+">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -154,28 +154,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-MySQL" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>交换机：<br>路由器：  </p>
-<h3 id="1-数据包和数据帧"><a href="#1-数据包和数据帧" class="headerlink" title="1.数据包和数据帧"></a>1.数据包和数据帧</h3><p>数据包：数据-源ip地址-目标ip地址<br>数据帧（数据包+物理地址）：数据-源ip地址-目标ip地址-源mac地址-目标mac地址<br>ip地址：决定了最终要去的地址<br>mac地址：路由下一跳<br>路由器会改变数据帧中的源mac地址和目标mac地址，路由器中有路由表。  </p>
-<h3 id="2-OSI参考模型"><a href="#2-OSI参考模型" class="headerlink" title="2.OSI参考模型"></a>2.OSI参考模型</h3><p>应用层：所有能产生网络流量的程序<br>表示层：在传输之前是否进行加密或压缩处理;表示层提供文本压缩，数据加密与解密，语法选择，数据转换和格式转换服务<br>会话层：查木马 netstat-n<br>传输层：可靠传输、不可靠传输、流量控制<br>网络层：负责选择最佳路径、规划ip地址<br>数据链路层：帧的开始和结束、透明传输、差错校验<br>物理层：接口标准、电气标准、如何在物理链路上传输更快速度<br><strong>每一层都要为上一层提供服务</strong>  </p>
-<h3 id="OSI参考模型对网络排错指导"><a href="#OSI参考模型对网络排错指导" class="headerlink" title="OSI参考模型对网络排错指导"></a>OSI参考模型对网络排错指导</h3><p>1.物理层故障：查看连接状态、发生和接受的数据包<br>2.数据链路层故障：MAC冲突、ADSL欠费、网速没有协商一致、计算机连接到错误的VLAN<br>3.网络层故障：配置错误IP地址、子网掩码、配置错误的网关、路由器没有配置到达目标网络的路由<br>4.应用层故障：应用程序配置错误</p>
-<p>##3.TCP/IP协议和OSI参考模型<br>OSI参考模型——————————五层模型————TCP/IP协议栈<br>（应用层、表示层、会话层）———应用层—————HTTP、FTP、DNS<br>传输层—————————————传输层—————TCP/UDP<br>网络层—————————————网络层—————（ARP）、IP、（ICMP/IGMP）<br>数据链路层———————————数据链路层———（Ethernet）、ATM、Frame Relay<br>物理层—————————————物理层—————（Ethernet）、ATM、Frame Relay<br>网络接口层（链路层=物理层+数据链路层）   </p>
-<h2 id><a href="#" class="headerlink" title=" "></a> </h2><p><strong>数据封装</strong><br>（应用层、表示层、会话层）———上层数据<br>传输层—————————————TCP头+（上层数据）-&gt;数据段或消息<br>网络层—————————————IP头+（TCP头+上层数据）-&gt;数据包<br>数据链路层———————————MAC头+（IP头+TCP头+上层数据）+FCS[差错校验]-&gt;数据帧<br>物理层—————————————Bit    </p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2><h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>HTTP（超文本传输协议）是应用层上的一种户端/服务端模型的通信协议,它由请求和响应构成，且是无状态的。<br><strong>协议</strong>：协议规定了通信双方必须遵循的数据传输格式，这样通信双方按照约定的格式才能准确的通信。<br><strong>无状态</strong>：无状态是指两次连接通信之间是没有任何关系的，每次都是一个新的连接，服务端不会记录前后的请求信息。  </p>
-<h2 id="2-URL构成"><a href="#2-URL构成" class="headerlink" title="2.URL构成"></a>2.URL构成</h2><p><strong><a href="http://www.aspxfans.com:8080/news/index.aspboard?ID=5&amp;ID=24618&amp;page=1#name" target="_blank" rel="noopener">http://www.aspxfans.com:8080/news/index.aspboard?ID=5&amp;ID=24618&amp;page=1#name</a></strong>  </p>
-<ol>
-<li>协议</li>
-<li>主机（域名）</li>
-<li>端口</li>
-<li>路径</li>
-<li>参数  <h2 id="3-协议内容"><a href="#3-协议内容" class="headerlink" title="3.协议内容"></a>3.协议内容</h2><h3 id="请求（Request）"><a href="#请求（Request）" class="headerlink" title="请求（Request）"></a>请求（Request）</h3>客户端发送一个HTTP请求到服务端的格式：  </li>
-</ol>
-<h2 id="-2"><a href="#-2" class="headerlink" title=" "></a> </h2><h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h1><p>持续更新</p>
-
+        <h1 id="MySQl"><a href="#MySQl" class="headerlink" title="MySQl"></a>MySQl</h1><h2 id="一-索引"><a href="#一-索引" class="headerlink" title="一.索引"></a>一.索引</h2><h3 id="B-Tree原理"><a href="#B-Tree原理" class="headerlink" title="B+ Tree原理"></a>B+ Tree原理</h3><p><strong>1.数据结构</strong><br>B Tree指的是Balance Tree，也就是平衡树。平衡树是一颗查找树，并且所有叶子节点位于同一层。<br>B+ Tree是基于B Tree和叶子节点顺序访问指针进行实现，它具有B Tree的平衡性，并且通过顺序访问指针来提高区间查询的性能。<br>在B+ Tree中，一个节点中的key从左到右非递减排列，如果某个指针的左右相邻key分别是keyi和keyi+1，且不为null，则该指针指向节点的所有key大于等于keyi且小于等于keyi+1.<br><strong>2.操作</strong><br>进行查找操作时，首先在根节点进行二分查找，找到一个 key 所在的指针，然后递归地在指针所指向的节点进行查找。直到查找到叶子节点，然后在叶子节点上进行二分查找，找出 key 所对应的 data。<br>插入删除操作会破坏平衡树的平衡性，因此在插入删除操作之后，需要对树进行一个分裂、合并、旋转等操作来维护平衡性。<br><strong>3.与红黑树的比较</strong><br>红黑树等平衡树也可以用来实现索引，但是文件系统及数据库系统普遍采用 B+ Tree 作为索引结构，主要有以下两个原因：<br><strong>（一）更少的查找次数</strong>：<br>平衡树查找操作的时间复杂度和树高h相关，O(h)=O(logdN)，其中d为每个节点的出度。<br>红黑树的出度为2，而B+ Tree的出度一般都非常大，所以红黑树的树高h很明显比B+ Tree 大非常多，查找的次数也就更多。<br><strong>（二）利用磁盘预读特性</strong>：<br>为了减少磁盘I/O操作，磁盘往往不是严格按需读取，而是每次都会预读。预读过程中，磁盘进行顺序读取，顺序读取不需要进行磁盘寻道，并且只需要很短的磁盘旋转时间，速度会非常快。<br>操作系统一般将内存和磁盘分割成固定大小的块，每一块称为一页，内存与磁盘以页为单位交换数据。数据库系统将索引的一个节点的大小设置为页的大小，使得一次I/O就能完全载入一个节点。并且可以利用预读特性，相邻的节点也能够被预先载入。</p>
+<h3 id="MySQL-索引"><a href="#MySQL-索引" class="headerlink" title="MySQL 索引"></a>MySQL 索引</h3><p>索引是在存储引擎层实现的，而不是在服务器层实现的，所以不同存储引擎具有不同的索引类型和实现。<br><strong>1.B+Tree 索引</strong><br>是大多数 MySQL 存储引擎的默认索引类型。<br>因为不再需要进行全表扫描，只需要对树进行搜索即可，所以查找速度快很多。<br>因为 B+ Tree 的有序性，所以除了用于查找，还可以用于排序和分组。<br>可以指定多个列作为索引列，多个索引列共同组成键。<br>适用于全键值、键值范围和键前缀查找，其中键前缀查找只适用于最左前缀查找。如果不是按照索引列的顺序进行查找，则无法使用索引。<br>nnoDB 的 B+Tree 索引分为主索引和辅助索引。主索引的叶子节点 data 域记录着完整的数据记录，这种索引方式被称为聚簇索引。因为无法把数据行存放在两个不同的地方，所以一个表只能有一个聚簇索引。<br>辅助索引的叶子节点的 data 域记录着主键的值，因此在使用辅助索引进行查找时，需要先查找到主键值，然后再到主索引中进行查找。<br><strong>2.哈希索引</strong><br>哈希索引能以 O(1) 时间进行查找，但是失去了有序性：  </p>
+<ul>
+<li>无法用于排序与分组； </li>
+<li>只支持精确查找，无法用于部分查找和范围查找。  </li>
+</ul>
+<p>InnoDB 存储引擎有一个特殊的功能叫“自适应哈希索引”，当某个索引值被使用的非常频繁时，会在 B+Tree 索引之上再创建一个哈希索引，这样就让 B+Tree 索引具有哈希索引的一些优点，比如快速的哈希查找。<br><strong>3.全文索引</strong><br>MyISAM 存储引擎支持全文索引，用于查找文本中的关键词，而不是直接比较是否相等。<br>查找条件使用 MATCH AGAINST，而不是普通的 WHERE。<br>全文索引使用倒排索引实现，它记录着关键词到其所在文档的映射。<br>InnoDB 存储引擎在 MySQL 5.6.4 版本中也开始支持全文索引。<br><strong>4.空间数据索引</strong><br>MyISAM 存储引擎支持空间数据索引（R-Tree），可以用于地理数据存储。空间数据索引会从所有维度来索引数据，可以有效地使用任意维度来进行组合查询。<br>必须使用 GIS 相关的函数来维护数据。<br><strong>索引优化</strong><br><strong>1.独立的列</strong><br>在进行查询时，索引列不能是表达式的一部分，也不能是函数的参数，否则无法使用索引。<br>例如下面的查询不能使用 actor_id 列的索引：<br><code>SELECT actor_id FROM sakila.actor WHERE actor_id + 1 = 5;</code><br><strong>2.多列索引</strong><br>在需要使用多个列作为条件进行查询时，使用多列索引比使用多个单列索引性能更好。<br>例如下面的语句中，最好把 actor_id 和 film_id 设置为多列索引：<br><code>SELECT film_id, actor_ id FROM sakila.film_actor WHERE actor_id = 1 AND film_id = 1;</code><br><strong>3.索引列的顺序</strong><br>让选择性最强的索引列放在前面。<br>索引的选择性是指：不重复的索引值和记录总数的比值。最大值为 1，此时每个记录都有唯一的索引与其对应。选择性越高，每个记录的区分度越高，查询效率也越高。<br>例如下面显示的结果中 customer_id 的选择性比 staff_id 更高，因此最好把 customer_id 列放在多列索引的前面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(DISTINCT staff_id)/COUNT(*) AS staff_id_selectivity,</span><br><span class="line">COUNT(DISTINCT customer_id)/COUNT(*) AS customer_id_selectivity,</span><br><span class="line">COUNT(*)</span><br><span class="line">FROM payment;  </span><br><span class="line">```</span><br></pre></td></tr></table></figure></p>
+<p> staff_id_selectivity: 0.0001<br>customer_id_selectivity: 0.0373<br>               COUNT(*): 16049<br><code>`</code><br><strong>4.前缀索引</strong><br>对于 BLOB、TEXT 和 VARCHAR 类型的列，必须使用前缀索引，只索引开始的部分字符。<br>前缀长度的选取需要根据索引选择性来确定。<br><strong>5.覆盖索引</strong><br>索引包含所有需要查询的字段的值。<br>具有以下优点：  </p>
+<ul>
+<li>索引通常远小于数据行的大小，只读取索引能大大减少数据访问量。</li>
+<li>一些存储引擎（例如 MyISAM）在内存中只缓存索引，而数据依赖于操作系统来缓存。因此，只访问索引可以不使用系统调用（通常比较费时）。</li>
+<li>对于 InnoDB 引擎，若辅助索引能够覆盖查询，则无需访问主索引。  </li>
+</ul>
+<p><strong>索引的优点</strong>  </p>
+<ul>
+<li>大大减少了服务器需要扫描的数据行数。</li>
+<li>帮助服务器避免进行排序和分组，以及避免创建临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中创建，不需要排序和分组，也就不需要创建临时表）。</li>
+<li>将随机 I/O 变为顺序 I/O（B+Tree 索引是有序的，会将相邻的数据都存储在一起）。  </li>
+</ul>
+<p><strong>索引的使用条件</strong>  </p>
+<ul>
+<li>对于非常小的表、大部分情况下简单的全表扫描比建立索引更高效；</li>
+<li>对于中到大型的表，索引就非常有效；</li>
+<li>但是对于特大型的表，建立和维护索引的代价将会随之增长。这种情况下，需要用到一种技术可以直接区分出需要查询的一组数据，而不是一条记录一条记录地匹配，例如可以使用分区技术。</li>
+</ul>
+<h2 id="二-查询性能优化"><a href="#二-查询性能优化" class="headerlink" title="二.查询性能优化"></a>二.查询性能优化</h2><h2 id="三-存储引擎"><a href="#三-存储引擎" class="headerlink" title="三.存储引擎"></a>三.存储引擎</h2><h2 id="四-数据类型"><a href="#四-数据类型" class="headerlink" title="四.数据类型"></a>四.数据类型</h2><h2 id="五-切分"><a href="#五-切分" class="headerlink" title="五.切分"></a>五.切分</h2><h2 id="六-复制"><a href="#六-复制" class="headerlink" title="六.复制"></a>六.复制</h2>
       
 
       
@@ -254,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/27/计算机网络/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/24/MySQL/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,7 +277,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/08/Linux/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/19/Java多线程编程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -278,7 +287,7 @@
     </a>
   
   
-    <a href="/2019/06/26/数据结构和算法/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/08/20/面试题/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>

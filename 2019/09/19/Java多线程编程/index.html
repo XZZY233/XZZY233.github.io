@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="编程词汇1.万年历Perpetual calendar2.客户Customer3.修改Modify4.账户Account5.存款Deposit6.取款Withdrawal7.余额Balance8.注册Registered9.会员Member10.座机Landline11.判断Judge12.批发Wholesale13.品种Strain14.飞盘flying disk15.计算Calculation">
+  <meta name="description" content="Java 多线程编程名词解释 多线程：指的是这个程序（一个进程）运行时产生了不止一个线程   并行与并发   并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。 通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。并发往往在场景中有公用的资源，那么针对这个公用的资源往往产生瓶颈，我们会用TPS或者QPS来反应这个系统的处理能力。   线程安全：经常用来">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/2019/05/20/编程词汇/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/Java多线程编程/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
-<meta property="og:description" content="编程词汇1.万年历Perpetual calendar2.客户Customer3.修改Modify4.账户Account5.存款Deposit6.取款Withdrawal7.余额Balance8.注册Registered9.会员Member10.座机Landline11.判断Judge12.批发Wholesale13.品种Strain14.飞盘flying disk15.计算Calculation">
+<meta property="og:description" content="Java 多线程编程名词解释 多线程：指的是这个程序（一个进程）运行时产生了不止一个线程   并行与并发   并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。 通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。并发往往在场景中有公用的资源，那么针对这个公用的资源往往产生瓶颈，我们会用TPS或者QPS来反应这个系统的处理能力。   线程安全：经常用来">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-26T09:59:38.534Z">
+<meta property="og:updated_time" content="2019-09-19T09:18:16.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
-<meta name="twitter:description" content="编程词汇1.万年历Perpetual calendar2.客户Customer3.修改Modify4.账户Account5.存款Deposit6.取款Withdrawal7.余额Balance8.注册Registered9.会员Member10.座机Landline11.判断Judge12.批发Wholesale13.品种Strain14.飞盘flying disk15.计算Calculation">
+<meta name="twitter:description" content="Java 多线程编程名词解释 多线程：指的是这个程序（一个进程）运行时产生了不止一个线程   并行与并发   并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。 通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。并发往往在场景中有公用的资源，那么针对这个公用的资源往往产生瓶颈，我们会用TPS或者QPS来反应这个系统的处理能力。   线程安全：经常用来">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -154,13 +154,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-编程词汇" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java多线程编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="编程词汇"><a href="#编程词汇" class="headerlink" title="编程词汇"></a>编程词汇</h2><p>1.万年历<br>Perpetual calendar<br>2.客户<br>Customer<br>3.修改<br>Modify<br>4.账户<br>Account<br>5.存款<br>Deposit<br>6.取款<br>Withdrawal<br>7.余额<br>Balance<br>8.注册<br>Registered<br>9.会员<br>Member<br>10.座机<br>Landline<br>11.判断<br>Judge<br>12.批发<br>Wholesale<br>13.品种<br>Strain<br>14.飞盘<br>flying disk<br>15.计算<br>Calculation<br>16.卡车<br>truck<br>17.吨<br>ton<br>18.防盗门<br>Security door<br>19.上网<br>Internet access<br>20.内存<br>Ram<br>21.硬盘<br>Hard disk<br>22.组装<br>assembling<br>23.借钱<br>Borrow Money<br>持续更新</p>
+        <h1 id="Java-多线程编程"><a href="#Java-多线程编程" class="headerlink" title="Java 多线程编程"></a>Java 多线程编程</h1><h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li>多线程：指的是这个程序（一个进程）运行时产生了不止一个线程  </li>
+<li>并行与并发  <ul>
+<li>并行：多个cpu实例或者多台机器同时执行一段处理逻辑，是真正的同时。</li>
+<li>通过cpu调度算法，让用户看上去同时执行，实际上从cpu操作层面不是真正的同时。并发往往在场景中有公用的资源，那么针对这个公用的资源往往产生瓶颈，我们会用TPS或者QPS来反应这个系统的处理能力。</li>
+</ul>
+</li>
+<li><p>线程安全：经常用来描绘一段代码。指在并发的情况之下，该代码经过多线程使用，线程的调度顺序不影响任何结果。这个时候使用多线程，我们只需要关注系统的内存，cpu是不是够用即可。反过来，线程不安全就意味着线程的调度顺序会影响最终结果，如不加事务的转账代码：  </p>
+<pre><code>oid transferMoney(User from, User to, float amount){
+  to.setMoney(to.getBalance() + amount);
+  from.setMoney(from.getBalance() - amount);
+}
+</code></pre></li>
+<li><p>同步：Java中的同步指的是通过人为的控制和调度，保证共享资源的多线程访问成为线程安全，来保证结果的准确。如上面的代码简单加入@synchronized关键字。在保证结果准确的同时，提高性能，才是优秀的程序。线程安全的优先级高于性能。 </p>
+</li>
+</ul>
+<h3 id="线程管理"><a href="#线程管理" class="headerlink" title="线程管理"></a>线程管理</h3><p><strong>1.线程睡眠——sleep</strong><br>如果需要让当前正在执行的线程暂停一段时间，并进入阻塞状态，则可以通过调用Thread的sleep方法。<br>(1)sleep是静态方法，最好不要用Thread的实例对象调用它，因为它睡眠的始终是当前正在运行的线程，而不是调用它的线程对象，它只对正在运行状态的线程对象有效。如下面的例子：  </p>
+<pre><code>public class Test1 {  
+    public static void main(String[] args) throws InterruptedException {  
+        System.out.println(Thread.currentThread().getName());  
+        MyThread myThread=new MyThread();  
+        myThread.start();  
+        myThread.sleep(1000);//这里sleep的就是main线程，而非myThread线程  
+        Thread.sleep(10);  
+        for(int i=0;i&lt;100;i++){  
+            System.out.println(&quot;main&quot;+i);  
+        }  
+    }  
+}   
+</code></pre><p>(2)Java线程调度是Java多线程的核心，只有良好的调度，才能充分发挥系统的性能，提高程序的执行效率。但是不管程序员怎么编写调度，只能最大限度的影响线程执行的次序，而不能做到精准控制。因为使用sleep方法之后，线程是进入阻塞状态的，只有当睡眠的时间结束，才会重新进入到就绪状态，而就绪状态进入到运行状态，是由系统控制的，我们不可能精准的去干涉它，所以如果调用Thread.sleep(1000)使得线程睡眠1秒，可能结果会大于1秒。<br><strong>2.线程让步——yield</strong><br>yield()方法和sleep()方法有点相似，它也是Thread类提供的一个静态的方法，它也可以让当前正在执行的线程暂停，让出cpu资源给其他的线程。但是和sleep()方法不同的是，它不会进入到阻塞状态，而是进入到就绪状态。yield()方法只是让当前线程暂停一下，重新进入就绪的线程池中，让系统的线程调度器重新调度器重新调度一次，完全可能出现这样的情况：当某个线程调用yield()方法之后，线程调度器又将其调度出来重新进入到运行状态执行。<br>实际上，当某个线程调用了yield()方法暂停之后，优先级与当前线程相同，或者优先级比当前线程更高的就绪状态的线程更有可能获得执行的机会，当然，只是有可能，因为我们不可能精确的干涉cpu调度线程。  </p>
+<pre><code>public class Test1 {  
+    public static void main(String[] args) throws InterruptedException {  
+        new MyThread(&quot;低级&quot;, 1).start();  
+        new MyThread(&quot;中级&quot;, 5).start();  
+        new MyThread(&quot;高级&quot;, 10).start();  
+    }  
+}  
 
+class MyThread extends Thread {  
+    public MyThread(String name, int pro) {  
+        super(name);// 设置线程的名称  
+        this.setPriority(pro);// 设置优先级  
+    }  
+
+    @Override  
+    public void run() {  
+        for (int i = 0; i &lt; 30; i++) {  
+            System.out.println(this.getName() + &quot;线程第&quot; + i + &quot;次执行！&quot;);  
+            if (i % 5 == 0)  
+                Thread.yield();  
+        }  
+    }  
+} 
+</code></pre><p><strong>关于sleep()方法和yield()方的区别如下：</strong>  </p>
+<ol>
+<li>sleep方法暂停当前线程后，会进入阻塞状态，只有当睡眠时间到了，才会转入就绪状态。而yield方法调用后 ，是直接进入就绪状态，所以有可能刚进入就绪状态，又被调度到运行状态。  </li>
+<li>sleep方法声明抛出了InterruptedException，所以调用sleep方法的时候要捕获该异常，或者显示声明抛出该异常。而yield方法则没有声明抛出任务异常。  </li>
+<li><p>sleep方法比yield方法有更好的可移植性，通常不要依靠yield方法来控制并发线程的执行。<br><strong>3.线程合并——join</strong><br>线程的合并的含义就是将几个并行线程的线程合并为一个单线程执行，应用场景是当一个线程必须等待另一个线程执行完毕才能执行时，Thread类提供了join方法来完成这个功能，注意，它不是静态方法。<br>从上面的方法的列表可以看到，它有3个重载的方法：  </p>
+<p> void join()      </p>
+<pre><code>当前线程等该加入该线程后面，等待该线程终止。    
+</code></pre><p> void join(long millis)  </p>
+<pre><code>当前线程等待该线程终止的时间最长为 millis 毫秒。 如果在millis时间内，该线程没有执行完，那么当前线程进入就绪状态，重新等待cpu调度  
+</code></pre><p> void join(long millis,int nanos)   </p>
+<pre><code>等待该线程终止的时间最长为 millis 毫秒 + nanos 纳秒。如果在millis时间内，该线程没有执行完，那么当前线程进入就绪状态，重新等待cpu调度    
+</code></pre></li>
+</ol>
+<p><strong>4.设置线程的优先级</strong><br>每个线程执行时都有一个优先级的属性，优先级高的线程可以获得较多的执行机会，而优先级低的线程则获得较少的执行机会。与线程休眠类似，线程的优先级仍然无法保障线程的执行次序。只不过，优先级高的线程获取CPU资源的概率较大，优先级低的也并非没机会执行。<br>每个线程默认的优先级都与创建它的父线程具有相同的优先级，在默认情况下，main线程具有普通优先级。<br>Thread类提供了setPriority(int newPriority)和getPriority()方法来设置和返回一个指定线程的优先级，其中setPriority方法的参数是一个整数，范围是1~·0之间，也可以使用Thread类提供的三个静态常量：  </p>
+<pre><code>MAX_PRIORITY   =10
+
+MIN_PRIORITY   =1
+
+NORM_PRIORITY   =5    
+</code></pre><p>代码  </p>
+<pre><code>public class Test1 {  
+    public static void main(String[] args) throws InterruptedException {  
+        new MyThread(&quot;高级&quot;, 10).start();  
+        new MyThread(&quot;低级&quot;, 1).start();  
+    }  
+}  
+
+class MyThread extends Thread {  
+    public MyThread(String name,int pro) {  
+        super(name);//设置线程的名称  
+        setPriority(pro);//设置线程的优先级  
+    }  
+    @Override  
+    public void run() {  
+        for (int i = 0; i &lt; 100; i++) {  
+            System.out.println(this.getName() + &quot;线程第&quot; + i + &quot;次执行！&quot;);  
+        }  
+    }  
+}  
+</code></pre><p>虽然Java提供了10个优先级别，但这些优先级别需要操作系统的支持。不同的操作系统的优先级并不相同，而且也不能很好的和Java的10个优先级别对应。所以我们应该使用MAX_PRIORITY、MIN_PRIORITY和NORM_PRIORITY三个静态常量来设定优先级，这样才能保证程序最好的可移植性。<br><strong>5.后台（守护）线程</strong><br>守护线程使用的情况较少，但并非无用，举例来说，JVM的垃圾回收、内存管理等线程都是守护线程。还有就是在做数据库应用时候，使用的数据库连接池，连接池本身也包含着很多后台线程，监控连接个数、超时时间、状态等等。调用线程对象的方法setDaemon(true)，则可以将其设置为守护线程。守护线程的用途为：    </p>
+<ul>
+<li>守护线程通常用于执行一些后台作业，例如在你的应用程序运行时播放背景音乐，在文字编辑器里做自动语法检查、自动保存等功能。  </li>
+<li>Java的垃圾回收也是一个守护线程。守护线的好处就是你不需要关心它的结束问题。例如你在你的应用程序运行的时候希望播放背景音乐，如果将这个播放背景音乐的线程设定为非守护线程，那么在用户请求退出的时候，不仅要退出主线程，还要通知播放背景音乐的线程退出；如果设定为守护线程则不需要了。  </li>
+</ul>
+<p>setDaemon方法的详细说明：  </p>
+<pre><code>public final void setDaemon(boolean on)        将该线程标记为守护线程或用户线程。当正在运行的线程都是守护线程时，Java 虚拟机退出。    
+         该方法必须在启动线程前调用。 该方法首先调用该线程的 checkAccess 方法，且不带任何参数。这可能抛出 SecurityException（在当前线程中）。   
+  参数：
+     on - 如果为 true，则将该线程标记为守护线程。    
+  抛出：    
+    IllegalThreadStateException - 如果该线程处于活动状态。    
+    SecurityException - 如果当前线程无法修改该线程。  
+</code></pre><p>JRE判断程序是否执行结束的标准是所有的前台执线程行完毕了，而不管后台线程的状态，因此，在使用后台县城时候一定要注意这个问题。<br><strong>6.正确结束线程</strong><br>Thread.stop()、Thread.suspend、Thread.resume、Runtime.runFinalizersOnExit这些终止线程运行的方法已经被废弃了，使用它们是极端不安全的！想要安全有效的结束一个线程，可以使用下面的方法：  </p>
+<ul>
+<li>正常执行完run方法，然后结束掉；</li>
+<li>控制循环条件和判断条件的标识符来结束掉线程。<h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3>线程在Running的过程中可能会遇到阻塞(Blocked)情况  </li>
+</ul>
+<ol>
+<li>调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。  </li>
+<li>调用wait()，使该线程处于等待池(wait blocked pool),直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）。  </li>
+<li><p>对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。<br>此外，在runnable状态的线程是处于被调度的线程，此时的调度顺序是不一定的。Thread类中的yield方法可以让一个running状态的线程转入runnable。  </p>
+<h3 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h3><p>java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查），将会导致数据不准确，相互之间产生冲突，因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。<br><strong>1.同步方法</strong><br>即有synchronized关键字修饰的方法。由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。在调用该方法前，需要获得内置锁，否则就处于阻塞状态。<br><code>public synchronized void save(){}</code><br>synchronized关键字也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个类<br><strong>2.同步代码块</strong><br>即有synchronized关键字修饰的语句块。被该关键字修饰的语句块会自动被加上内置锁，从而实现同步。  </p>
+<p> public class Bank {  </p>
+<pre><code>private int count =0;//账户余额  
+
+//存钱  
+public   void addMoney(int money){  
+
+    synchronized (this) {  
+        count +=money;  
+    }  
+    System.out.println(System.currentTimeMillis()+&quot;存进：&quot;+money);  
+}  
+
+//取钱  
+public   void subMoney(int money){  
+
+    synchronized (this) {  
+        if(count-money &lt; 0){  
+            System.out.println(&quot;余额不足&quot;);  
+            return;  
+        }  
+        count -=money;  
+    }  
+    System.out.println(+System.currentTimeMillis()+&quot;取出：&quot;+money);  
+}  
+
+//查询  
+public void lookMoney(){  
+    System.out.println(&quot;账户余额：&quot;+count);  
+} 
+</code></pre><p> }   </p>
+</li>
+</ol>
+<p>同步是一种高开销的操作，因此应该尽量减少同步的内容。通常没有必要同步整个方法，使用synchronized代码块同步关键代码即可。<br><strong>3.使用特殊域变量(volatile)实现线程同步</strong>  </p>
+<ul>
+<li>volatile关键字为域变量的访问提供了一种免锁机制；</li>
+<li>使用volatile修饰域相当于告诉虚拟机该域可能会被其他线程更新；  </li>
+<li>因此每次使用该域就要重新计算，而不是使用寄存器中的值；</li>
+<li>volatile不会提供任何原子操作，它也不能用来修饰final类型的变量。  </li>
+</ul>
+<p>代码：  </p>
+<pre><code>public class SynchronizedThread {
+
+    class Bank {
+
+        private volatile int account = 100;
+
+        public int getAccount() {
+            return account;
+        }
+
+        /**
+         * 用同步方法实现
+         * 
+         * @param money
+         */
+        public synchronized void save(int money) {
+            account += money;
+        }
+
+        /**
+         * 用同步代码块实现
+         * 
+         * @param money
+         */
+        public void save1(int money) {
+            synchronized (this) {
+                account += money;
+            }
+        }
+    }
+
+    class NewThread implements Runnable {
+        private Bank bank;
+
+        public NewThread(Bank bank) {
+            this.bank = bank;
+        }
+
+        @Override
+        public void run() {
+            for (int i = 0; i &lt; 10; i++) {
+                // bank.save1(10);
+                bank.save(10);
+                System.out.println(i + &quot;账户余额为：&quot; +bank.getAccount());
+            }
+        }
+
+    }
+
+    /**
+     * 建立线程，调用内部类
+     */
+    public void useThread() {
+        Bank bank = new Bank();
+        NewThread new_thread = new NewThread(bank);
+        System.out.println(&quot;线程1&quot;);
+        Thread thread1 = new Thread(new_thread);
+        thread1.start();
+        System.out.println(&quot;线程2&quot;);
+        Thread thread2 = new Thread(new_thread);
+        thread2.start();
+    }
+
+    public static void main(String[] args) {
+        SynchronizedThread st = new SynchronizedThread();
+        st.useThread();
+    }  
+</code></pre><p>多线程中的非同步问题主要出现在对域的读写上，如果让域自身避免这个问题，则就不需要修改操作该域的方法。用final域，有锁保护的域和volatile域可以避免非同步的问题。</p>
+<h3 id="线程通信"><a href="#线程通信" class="headerlink" title="线程通信"></a>线程通信</h3><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><h3 id="线程相关类"><a href="#线程相关类" class="headerlink" title="线程相关类"></a>线程相关类</h3>
       
 
       
@@ -239,7 +461,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/20/编程词汇/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/19/Java多线程编程/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,7 +475,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/22/排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/20/MySql题目/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -263,7 +485,7 @@
     </a>
   
   
-    <a href="/2019/05/19/代码报错集合/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/08/24/MySQL/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
