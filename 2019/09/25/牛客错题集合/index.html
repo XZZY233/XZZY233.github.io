@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | XZZY233 BLOG</title>
+  <title>XZZY233 BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="20190925以下程序的输出结果是？public class Example {     String str = new String(&amp;quot;good&amp;quot;);     char[] ch = { &amp;apos;a&amp;apos;, &amp;apos;b&amp;apos;, &amp;apos;c&amp;apos; };      public static void main(String args[]) {">
+<meta property="og:type" content="article">
 <meta property="og:title" content="XZZY233 BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/page/4/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/牛客错题集合/index.html">
 <meta property="og:site_name" content="XZZY233 BLOG">
+<meta property="og:description" content="20190925以下程序的输出结果是？public class Example {     String str = new String(&amp;quot;good&amp;quot;);     char[] ch = { &amp;apos;a&amp;apos;, &amp;apos;b&amp;apos;, &amp;apos;c&amp;apos; };      public static void main(String args[]) {">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-25T12:45:45.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XZZY233 BLOG">
+<meta name="twitter:description" content="20190925以下程序的输出结果是？public class Example {     String str = new String(&amp;quot;good&amp;quot;);     char[] ch = { &amp;apos;a&amp;apos;, &amp;apos;b&amp;apos;, &amp;apos;c&amp;apos; };      public static void main(String args[]) {">
   
     <link rel="alternative" href="/atom.xml" title="XZZY233 BLOG" type="application/atom+xml">
   
@@ -150,235 +154,239 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-牛客错题集合" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="20190925"><a href="#20190925" class="headerlink" title="20190925"></a>20190925</h2><h3 id="以下程序的输出结果是？"><a href="#以下程序的输出结果是？" class="headerlink" title="以下程序的输出结果是？"></a>以下程序的输出结果是？</h3><pre><code>public class Example {
+    String str = new String(&quot;good&quot;);
+    char[] ch = { &apos;a&apos;, &apos;b&apos;, &apos;c&apos; };
+
+    public static void main(String args[]) {
+        Example ex = new Example();
+        ex.change(ex.str, ex.ch);
+        System.out.print(ex.str + &quot; and &quot;);
+        System.out.print(ex.ch);
+    }
+
+   public static void change(String str, char ch[])       
+   {
+        str = &quot;test ok&quot;;
+        ch[0] = &apos;g&apos;;
+    }
+}  
+</code></pre><p><strong>结果：</strong>good and gbc<br><strong>解释：</strong><br>1.考察值传递和引用传递。对于值传递，拷贝的值用完之后就会被释放，对原值没有任何影响，但是对于引用传递，拷贝的是对象的引用，和原值指向的同一块地址，即操作的是同一个对象，所以操作之间会相互影响。所以对于String str是值传递，操作之间互不影响，原值保持不变。而ch是数组，拷贝的是对象的引用，值发生了改变，因此选择B<br>2.其实都是引用传递，只是因为String是个特殊的final类，所以每次对String的更改都会重新创建内存地址并存储（也可能是在字符串常量池中创建内存地址并存入对应的字符串内容），但是因为这里String是作为参数传递的，在方法体内会产生新的字符串而不会对方法体外的字符串产生影响。<br>3.str变量是一个引用变量，它存在栈区中，str变量保存的是堆区中”good”字符串所在数组的首地址。但是呢 这里把”good”的首地址赋给change(String str, char ch[]) 函数的 形参str，形参str又指向了新的“test ok”了 ，这里形参str指来指去最后change调用结束，形参str释放。属性str还是指向原来的“good”数组。  </p>
+<h3 id="以下不是修饰符final的作用的是-？"><a href="#以下不是修饰符final的作用的是-？" class="headerlink" title="以下不是修饰符final的作用的是( )？"></a>以下不是修饰符final的作用的是( )？</h3><pre><code>修饰常量
+修饰不可被继承的类
+修饰不可变类
+修饰不可覆盖的方法    
+</code></pre><p><strong>答案：</strong>修饰不可变类<br><strong>解释：</strong><br>final的作用：1. 修饰变量，变量的引用地址不可变，但是地址中的内容可以变。（应该是使用final修饰基本类型的变量，一旦对该变量赋值之后，就不能重新赋值了。但是对于引用类型变量，他保存的只是引用，final只能保证引用类型变量所引用的地址不改变，但不保证这个对象不改变，这个对象完全可以发生改变。）2. 修饰方法，方法不可被重写，但是还是可以重载。3. 修饰类，类不可继承。<br>不可变类，说的是一个类一旦被实例化，就不可改变自身的状态。常见的比如String和基本数据类型的包装类，对于这种不可变类，一旦在进行引用传递的时候，形参一开始就和实际参数指向的不是一个地址，所以在方法中对形参的改变，并不会影响实际参数。  </p>
+<h3 id="以下程序的输出结果是？-1"><a href="#以下程序的输出结果是？-1" class="headerlink" title="以下程序的输出结果是？"></a>以下程序的输出结果是？</h3><pre><code>public static void main (String[] args) { 
+    String classFile = &quot;com.jd.&quot;. replaceAll(&quot;.&quot;, &quot;/&quot;) + &quot;MyClass.class&quot;;
+    System.out.println(classFile);
+}  
+</code></pre><p><strong>结果：</strong>///////MyClass.class<br><strong>解释：</strong><br>由于replaceAll方法的第一个参数是一个正则表达式，而”.”在正则表达式中表示任何字符，所以会把前面字符串的所有字符都替换成”/“。如果想替换的只是”.”，那么久要写成”\.”。  </p>
+<h3 id="关于JSP生命周期的叙述，下列哪些为真？"><a href="#关于JSP生命周期的叙述，下列哪些为真？" class="headerlink" title="关于JSP生命周期的叙述，下列哪些为真？"></a>关于JSP生命周期的叙述，下列哪些为真？</h3><pre><code>JSP会先解释成Servlet源文件，然后编译成Servlet类文件
+每当用户端运行JSP时，jsp init()方法都会运行一次
+每当用户端运行JSP时，jsp service()方法都会运行一次
+每当用户端运行JSP时，jsp destroy()方法都会运行一次 
+</code></pre><p><strong>答案：</strong>A、C<br><strong>解释：</strong><br>Jsp只会在客户端第一次发请求的时候被编译，之后的请求不会再编译，同时tomcat能自动检测jsp变更与否，变更则再进行编译。<br>第一次编译并初始化时调用： init() ；销毁调用： destroy()  。在整个jsp生命周期中均只调用一次。<br>service()方法是接收请求，返回响应的方法。每次请求都执行一次，该方法被HttpServlet封装为doGet和doPost方法  </p>
+<h3 id="对于abstract声明的类，下面说法正确的是？"><a href="#对于abstract声明的类，下面说法正确的是？" class="headerlink" title="对于abstract声明的类，下面说法正确的是？"></a>对于abstract声明的类，下面说法正确的是？</h3><pre><code>可以实例化
+不可以被继承
+子类为abstract
+只能被继承
+可以被抽象类继承
+</code></pre><p><strong>答案：</strong>E（可以被抽象类继承）<br><strong>解释：</strong><br>A,抽象类不能实例化，因为有抽象方法未实现<br>B,可以被继承。派生类可以实现抽象方法<br>C，子类可以是抽象的，也可以非抽象的<br>D，只能被继承说法太肯定，不正确<br>E，可以被抽象类继承，也可以被非抽象类继承  </p>
+<h3 id="以下程序的输出结果是？-2"><a href="#以下程序的输出结果是？-2" class="headerlink" title="以下程序的输出结果是？"></a>以下程序的输出结果是？</h3><pre><code>class A { 
+    public A() { 
+        System.out.println(&quot;class A&quot;); 
+    }
+    { System.out.println(&quot;I&apos;m A class&quot;); }
+    static { System.out.println(&quot;class A static&quot;); } 
+} 
+public class B extends A { 
+    public B() { 
+        System.out.println(&quot;class B&quot;); 
+    } 
+    { System.out.println(&quot;I&apos;m B class&quot;);} 
+    static { System.out.println(&quot;class B static&quot;); }  
+    public static void main(String[] args) { 
+        new B(); 
+    } 
+}  
+</code></pre><p><strong>结果：</strong>  </p>
+<pre><code>class A static        
+class B static           
+I&apos;m A class             
+class A               
+I&apos;m B class 
+class B  
+</code></pre><p><strong>解释：</strong><br>B继承A  new B会<br>1.把A的静态的执行完 执行B的静态的<br>2.再执行A的初始化代码块，构造函数<br>3.再执行B的初始化代码块，构造函数    </p>
+<h3 id="访问权限控制从最大权限到最小权限依次为：public-gt-protected-gt-默认-包访问权限-gt-private，因为protected除了可以被同一包访问，还可以被包外的子类所访问"><a href="#访问权限控制从最大权限到最小权限依次为：public-gt-protected-gt-默认-包访问权限-gt-private，因为protected除了可以被同一包访问，还可以被包外的子类所访问" class="headerlink" title="访问权限控制从最大权限到最小权限依次为：public&gt;protected&gt;默认(包访问权限)&gt;private，因为protected除了可以被同一包访问，还可以被包外的子类所访问"></a>访问权限控制从最大权限到最小权限依次为：public&gt;protected&gt;默认(包访问权限)&gt;private，因为protected除了可以被同一包访问，还可以被包外的子类所访问</h3><p><strong>解释：</strong><br>private：同一个人类中<br>default：<br>protected：<br>public：  </p>
+<h3 id="下列在Java语言中关于数据类型和包装类的说法，正确的是（）？"><a href="#下列在Java语言中关于数据类型和包装类的说法，正确的是（）？" class="headerlink" title="下列在Java语言中关于数据类型和包装类的说法，正确的是（）？"></a>下列在Java语言中关于数据类型和包装类的说法，正确的是（）？</h3><pre><code>基本（简单）数据类型是包装类的简写形式，可以用包装类替代基本（简单）数据类型
+long和double都占了64位（64bit）的存储空间。
+默认的整数数据类型是int，默认的浮点数据类型是float。
+和包装类一样，基本（简单）数据类型声明的变量中也具有静态方法，用来完成进制转化等。  
+</code></pre><p><strong>答案：</strong>B<br><strong>解释：</strong><br>A，包装和基本类型不是同一个概念<br>C，默认的浮点数据类型是double，如果要指明使用float，则需要在后面加f<br>D，基本数据类型是没有静态方法的，但是基本数据类型的包装类却有  </p>
+<h3 id="下面这段代码，当-T-分别是引用类型和值类型的时候，分别产生了多少个-T-对象（）？"><a href="#下面这段代码，当-T-分别是引用类型和值类型的时候，分别产生了多少个-T-对象（）？" class="headerlink" title="下面这段代码，当 T 分别是引用类型和值类型的时候，分别产生了多少个 T 对象（）？"></a>下面这段代码，当 T 分别是引用类型和值类型的时候，分别产生了多少个 T 对象（）？</h3><pre><code>T t = new T();
+Func(t);
+Func 定义如下： 
+public void Func(T t) {  }  
+</code></pre><p><strong>答案：</strong>1 2<br><strong>解释：</strong><br>D。引用类型作为函数的参数时，复制的是引用的地址，不会产生一个新的T；而如果T是值类型，其作为函数实参时会复制其值，也就是产生了一个新的T。所以D选项正确。  </p>
+<h3 id="对于函数y-ax-2-bx-c-a-gt-0-需要找出y的小值，精确到小数点后6位。下列选项中最有效的方法是（推公式）。"><a href="#对于函数y-ax-2-bx-c-a-gt-0-需要找出y的小值，精确到小数点后6位。下列选项中最有效的方法是（推公式）。" class="headerlink" title="对于函数y = ax^2 + bx + c,(a &gt; 0),需要找出y的小值，精确到小数点后6位。下列选项中最有效的方法是（推公式）。"></a>对于函数y = ax^2 + bx + c,(a &gt; 0),需要找出y的小值，精确到小数点后6位。下列选项中最有效的方法是（推公式）。</h3><h3 id="如何获取ServletContext设置的参数值？"><a href="#如何获取ServletContext设置的参数值？" class="headerlink" title="如何获取ServletContext设置的参数值？"></a>如何获取ServletContext设置的参数值？</h3><pre><code>context.getParameter()
+context.getInitParameter()
+context.getAttribute()
+context.getRequestDispatcher()    
+</code></pre><p><strong>答案：</strong>B<br><strong>解释：</strong><br>getParameter()是获取POST/GET传递的参数值；<br>getInitParameter获取Tomcat的server.xml中设置Context的初始化参数<br>getAttribute()是获取对象容器中的数据值；<br>getRequestDispatcher是请求转发。   </p>
+<h3 id="下面哪些类可以被继承？-Java-lang-Thread、java-lang-Number、java-lang-Double、java-lang-Math、-java-lang-ClassLoader"><a href="#下面哪些类可以被继承？-Java-lang-Thread、java-lang-Number、java-lang-Double、java-lang-Math、-java-lang-ClassLoader" class="headerlink" title="下面哪些类可以被继承？ Java.lang.Thread、java.lang.Number、java.lang.Double、java.lang.Math、 java.lang.ClassLoader"></a>下面哪些类可以被继承？ Java.lang.Thread、java.lang.Number、java.lang.Double、java.lang.Math、 java.lang.ClassLoader</h3><p><strong>答案：</strong>A B E<br><strong>解释：</strong><br>A，Thread可以被继承，用于创建新的线程<br>B，Number类可以被继承，Integer，Float，Double等都继承自Number类<br>C，Double类的声明为<code>public final class Doubleextends Numberimplements Comparable&lt;Double&gt;</code> final生明的类不能被继承<br>D，Math类的声明为<code>public final class Mathextends Object</code>不能被继承<br>E，ClassLoader可以被继承，用户可以自定义类加载器  </p>
+<h3 id="以下类型为Final类型的为（）"><a href="#以下类型为Final类型的为（）" class="headerlink" title="以下类型为Final类型的为（）"></a>以下类型为Final类型的为（）</h3><pre><code>HashMap
+StringBuffer
+String
+Hashtable    
+</code></pre><p><strong>答案：</strong>A B<br><strong>解释：</strong><br>StringBuilder , StringBuffer ,String 都是 final 的<br><strong>final修饰的成员变量为基本数据类型时，赋值后无法改变。当final修饰的为引用变量时，在赋值后其指向地址无法改变，但对象内容可以改变。</strong>  </p>
+<h3 id="关于运行时常量池，下列哪个说法是正确的"><a href="#关于运行时常量池，下列哪个说法是正确的" class="headerlink" title="关于运行时常量池，下列哪个说法是正确的"></a>关于运行时常量池，下列哪个说法是正确的</h3><pre><code>运行时常量池大小受栈区大小的影响
+运行时常量池大小受方法区大小的影响
+存放了编译时期生成的各种字面量
+存放编译时期生成的符号引用   
+</code></pre><p><strong>答案：</strong>B C D<br><strong>解释：</strong><br>运行时常量池（Runtime Constant Pool）是方法区的一部分。Class文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息是常量池（Constant Pool Table），用于存放编译器生成的各种字面量和符号引用，这部分内容将在类加载后进入方法区的运行时常量池中存放。 </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/25/JSP防止乱码/" class="archive-article-date">
-  	<time datetime="2019-05-25T11:43:32.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-25</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/25/牛客错题集合/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/25/Ajax/" class="archive-article-date">
-  	<time datetime="2019-05-25T07:35:15.303Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-25</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/24/设计模式/" class="archive-article-date">
-  	<time datetime="2019-05-24T12:14:45.861Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/09/25/新知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/22/java补充/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/23/java内存/" class="archive-article-date">
-  	<time datetime="2019-05-23T04:23:53.733Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/22/排序算法/" class="archive-article-date">
-  	<time datetime="2019-05-22T04:36:11.787Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/代码报错集合/" class="archive-article-date">
-  	<time datetime="2019-05-19T07:19:40.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/15/MVC/" class="archive-article-date">
-  	<time datetime="2019-05-15T00:16:53.730Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/14/mybatis/" class="archive-article-date">
-  	<time datetime="2019-05-14T14:49:03.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/09/Java集合/" class="archive-article-date">
-  	<time datetime="2019-05-09T01:15:25.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-09</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/05/Spring/" class="archive-article-date">
-  	<time datetime="2019-05-05T07:26:40.025Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/5/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -402,8 +410,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
